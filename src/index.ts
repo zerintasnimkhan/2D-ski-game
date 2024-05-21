@@ -51,7 +51,7 @@ const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
 
 app.ticker.add(() => {
-  
+
   // Acceleration
   if (keys.ArrowUp) {
     velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
