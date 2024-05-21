@@ -1,5 +1,5 @@
 import { Application, Sprite } from "pixi.js";
-import { Joystick, JoystickSettings, JoystickChangeEvent } from "./control/joystick"; // Adjust the import path accordingly
+import { Joystick, JoystickSettings, JoystickChangeEvent } from "./control/joystick"; 
 
 const app = new Application<HTMLCanvasElement>({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -45,12 +45,13 @@ window.addEventListener("keyup", (event) => {
   }
 });
 
-const maxSpeed = 7;
-const acceleration = 0.5;
+const maxSpeed = 5;
+const acceleration = 0.2;
 const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
 
 app.ticker.add(() => {
+  
   // Acceleration
   if (keys.ArrowUp) {
     velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
@@ -92,7 +93,7 @@ window.addEventListener("resize", () => {
   player.y = app.screen.height / 2;
 });
 
-// Add the joystick to the application
+
 const joystickSettings: JoystickSettings = {
   width: 120,
   height: 120,
@@ -103,12 +104,14 @@ const joystickSettings: JoystickSettings = {
     velocity.x = Math.cos(angle) * speed;
     velocity.y = Math.sin(angle) * speed;
   },
+
   onStart: () => {
     console.log("Joystick started");
   },
+
   onEnd: () => {
     console.log("Joystick ended");
-    // Gradually slow down the player when joystick is released
+    
     const slowDownInterval = setInterval(() => {
       if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
         velocity.x = 0;

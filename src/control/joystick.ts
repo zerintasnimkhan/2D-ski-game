@@ -20,7 +20,6 @@ export class Joystick extends Container {
   constructor(settings: JoystickSettings) {
     super();
 
-    // Shows hand cursor
     this.cursor = "pointer";
 
     this.settings = Object.assign(
