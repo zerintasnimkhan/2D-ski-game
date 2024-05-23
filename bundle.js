@@ -29585,6 +29585,11 @@ const maxSpeed = 5;
 const acceleration = 0.2;
 const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
+let targetRotation = 0;
+// Linear interpolation function
+function lerp(start, end, t) {
+    return start + (end - start) * t;
+}
 app.ticker.add(() => {
     // Acceleration
     if (keys.ArrowUp) {
@@ -29618,6 +29623,11 @@ app.ticker.add(() => {
     }
     player.x += velocity.x;
     player.y += velocity.y;
+    // Update player rotation based on velocity
+    if (velocity.x !== 0 || velocity.y !== 0) {
+        targetRotation = Math.atan2(velocity.y, velocity.x);
+    }
+    player.rotation = lerp(player.rotation, targetRotation, 0.1);
 });
 window.addEventListener("resize", () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
@@ -29633,6 +29643,7 @@ const joystickSettings = {
         const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
         velocity.x = Math.cos(angle) * speed;
         velocity.y = Math.sin(angle) * speed;
+        targetRotation = angle;
     },
     onStart: () => {
         console.log("Joystick started");
@@ -29640,7 +29651,8 @@ const joystickSettings = {
     onEnd: () => {
         console.log("Joystick ended");
         const slowDownInterval = setInterval(() => {
-            if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
+            if (Math.abs(velocity.x) <= deceleration &&
+                Math.abs(velocity.y) <= deceleration) {
                 velocity.x = 0;
                 velocity.y = 0;
                 clearInterval(slowDownInterval);
