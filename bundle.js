@@ -29623,10 +29623,17 @@ app.ticker.add(() => {
     }
     player.x += velocity.x;
     player.y += velocity.y;
-    // Update player rotation based on velocity
-    if (velocity.x !== 0 || velocity.y !== 0) {
-        targetRotation = Math.atan2(velocity.y, velocity.x);
+    // Update player rotation based on horizontal velocity
+    if (velocity.x < 0) {
+        targetRotation = Math.PI / 4; // 45 degrees in radians
     }
+    else if (velocity.x > 0) {
+        targetRotation = -Math.PI / 4; // -45 degrees in radians
+    }
+    else {
+        targetRotation = 0; // No rotation when not moving horizontally
+    }
+    // Smoothly rotate towards the target rotation
     player.rotation = lerp(player.rotation, targetRotation, 0.1);
 });
 window.addEventListener("resize", () => {
@@ -29643,7 +29650,16 @@ const joystickSettings = {
         const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
         velocity.x = Math.cos(angle) * speed;
         velocity.y = Math.sin(angle) * speed;
-        targetRotation = angle;
+        // Update target rotation based on joystick horizontal input
+        if (velocity.x < 0) {
+            targetRotation = Math.PI / 4; // 45 degrees in radians
+        }
+        else if (velocity.x > 0) {
+            targetRotation = -Math.PI / 4; // -45 degrees in radians
+        }
+        else {
+            targetRotation = 0; // No rotation when not moving horizontally
+        }
     },
     onStart: () => {
         console.log("Joystick started");
