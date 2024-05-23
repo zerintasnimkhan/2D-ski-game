@@ -29625,13 +29625,13 @@ app.ticker.add(() => {
     player.y += velocity.y;
     // Update player rotation based on horizontal velocity
     if (velocity.x < 0) {
-        targetRotation = Math.PI / 4; // 45 degrees in radians
+        targetRotation = 0.524;
     }
     else if (velocity.x > 0) {
-        targetRotation = -Math.PI / 4; // -45 degrees in radians
+        targetRotation = -0.524;
     }
     else {
-        targetRotation = 0; // No rotation when not moving horizontally
+        targetRotation = 0;
     }
     // Smoothly rotate towards the target rotation
     player.rotation = lerp(player.rotation, targetRotation, 0.1);
@@ -29650,15 +29650,14 @@ const joystickSettings = {
         const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
         velocity.x = Math.cos(angle) * speed;
         velocity.y = Math.sin(angle) * speed;
-        // Update target rotation based on joystick horizontal input
         if (velocity.x < 0) {
-            targetRotation = Math.PI / 4; // 45 degrees in radians
+            targetRotation = 0.524;
         }
         else if (velocity.x > 0) {
-            targetRotation = -Math.PI / 4; // -45 degrees in radians
+            targetRotation = -0.524;
         }
         else {
-            targetRotation = 0; // No rotation when not moving horizontally
+            targetRotation = 0;
         }
     },
     onStart: () => {
@@ -29667,8 +29666,7 @@ const joystickSettings = {
     onEnd: () => {
         console.log("Joystick ended");
         const slowDownInterval = setInterval(() => {
-            if (Math.abs(velocity.x) <= deceleration &&
-                Math.abs(velocity.y) <= deceleration) {
+            if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
                 velocity.x = 0;
                 velocity.y = 0;
                 clearInterval(slowDownInterval);
