@@ -93,10 +93,8 @@ export class Joystick extends Container {
     function onDragStart(event: FederatedPointerEvent) {
       startPosition = event.getLocalPosition(that);
       //startPosition = new Point(0, 0);
-
       dragging = true;
       that.inner.alpha = 1;
-
       that.settings.onStart?.();
     }
 
@@ -106,10 +104,8 @@ export class Joystick extends Container {
       }
 
       that.inner.position.set(0, 0);
-
       dragging = false;
       that.inner.alpha = that.innerAlphaStandby;
-
       that.settings.onEnd?.();
     }
 
@@ -124,131 +120,26 @@ export class Joystick extends Container {
       let sideY = newPosition.y - startPosition.y;
 
       let centerPoint = new Point(0, 0);
-      let angle = 0;
-
-      if (sideX == 0 && sideY == 0) {
-        return;
-      }
-
-      /**
-       * x:   -1 <-> 1
-       * y:   -1 <-> 1
-       *          Y
-       *          ^
-       *          |
-       *     180  |  90
-       *    ------------> X
-       *     270  |  360
-       *          |
-       *          |
-       */
-
-      let direction = Direction.LEFT;
-
-      if (sideX == 0) {
-        if (sideY > 0) {
-          centerPoint.set(
-            0,
-            sideY > that.outerRadius ? that.outerRadius : sideY
-          );
-          angle = 270;
-          direction = Direction.BOTTOM;
-        } else {
-          centerPoint.set(
-            0,
-            -(Math.abs(sideY) > that.outerRadius
-              ? that.outerRadius
-              : Math.abs(sideY))
-          );
-          angle = 90;
-          direction = Direction.TOP;
-        }
-        that.inner.position.set(centerPoint.x, centerPoint.y);
-        power = that.getPower(centerPoint);
-        velocity = that.getVelocity(startPosition, newPosition, power);
-
-        that.settings.onChange?.({ angle, direction, power, velocity });
-        return;
-      }
-
-      if (sideY == 0) {
-        if (sideX > 0) {
-          centerPoint.set(
-            Math.abs(sideX) > that.outerRadius
-              ? that.outerRadius
-              : Math.abs(sideX),
-            0
-          );
-          angle = 0;
-          direction = Direction.LEFT;
-        } else {
-          centerPoint.set(
-            -(Math.abs(sideX) > that.outerRadius
-              ? that.outerRadius
-              : Math.abs(sideX)),
-            0
-          );
-          angle = 180;
-          direction = Direction.RIGHT;
-        }
-
-        that.inner.position.set(centerPoint.x, centerPoint.y);
-        power = that.getPower(centerPoint);
-        velocity = that.getVelocity(startPosition, newPosition, power);
-
-        that.settings.onChange?.({ angle, direction, power, velocity });
-        return;
-      }
-
-      let tanVal = Math.abs(sideY / sideX);
-      let radian = Math.atan(tanVal);
-      angle = (radian * 180) / Math.PI;
-
-      let centerX = 0;
-      let centerY = 0;
 
       if (
-        sideX * sideX + sideY * sideY >=
-        that.outerRadius * that.outerRadius
+        Math.abs(sideX) > that.outerRadius ||
+        Math.abs(sideY) > that.outerRadius
       ) {
-        centerX = that.outerRadius * Math.cos(radian);
-        centerY = that.outerRadius * Math.sin(radian);
+        let radian = Math.atan2(sideY, sideX);
+        centerPoint.set(
+          Math.cos(radian) * that.outerRadius,
+          Math.sin(radian) * that.outerRadius
+        );
       } else {
-        centerX =
-          Math.abs(sideX) > that.outerRadius
-            ? that.outerRadius
-            : Math.abs(sideX);
-        centerY =
-          Math.abs(sideY) > that.outerRadius
-            ? that.outerRadius
-            : Math.abs(sideY);
+        centerPoint.set(sideX, sideY);
       }
 
-      if (sideY < 0) {
-        centerY = -Math.abs(centerY);
-      }
-      if (sideX < 0) {
-        centerX = -Math.abs(centerX);
-      }
-
-      if (sideX > 0 && sideY < 0) {
-        // < 90
-      } else if (sideX < 0 && sideY < 0) {
-        // 90 ~ 180
-        angle = 180 - angle;
-      } else if (sideX < 0 && sideY > 0) {
-        // 180 ~ 270
-        angle = angle + 180;
-      } else if (sideX > 0 && sideY > 0) {
-        // 270 ~ 369
-        angle = 360 - angle;
-      }
-      centerPoint.set(centerX, centerY);
+      that.inner.position.set(centerPoint.x, centerPoint.y);
       power = that.getPower(centerPoint);
       velocity = that.getVelocity(startPosition, newPosition, power);
 
-      direction = that.getDirection(centerPoint);
-      that.inner.position.set(centerPoint.x, centerPoint.y);
+      let angle = Math.atan2(centerPoint.y, centerPoint.x);
+      let direction = that.getDirection(centerPoint);
 
       that.settings.onChange?.({ angle, direction, power, velocity });
     }

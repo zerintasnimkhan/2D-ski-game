@@ -93,9 +93,9 @@ app.ticker.add(() => {
 
   // Update player rotation based on horizontal velocity
   if (velocity.x < 0) {
-    targetRotation = 0.524; 
+    targetRotation = 0.349; 
   } else if (velocity.x > 0) {
-    targetRotation = -0.524;
+    targetRotation = -0.349;
   } else {
     targetRotation = 0; 
   }
@@ -122,9 +122,9 @@ const joystickSettings: JoystickSettings = {
 
     
     if (velocity.x < 0) {
-      targetRotation = 0.524;
+      targetRotation = 0.349;
     } else if (velocity.x > 0) {
-      targetRotation = -0.524; 
+      targetRotation = -0.349; 
     } else {
       targetRotation = 0;
     }
