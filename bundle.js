@@ -29376,7 +29376,7 @@ class Joystick extends Container {
             (_b = (_a = that.settings).onEnd) === null || _b === void 0 ? void 0 : _b.call(_a);
         }
         function onDragMove(event) {
-            var _a, _b, _c, _d, _e, _f;
+            var _a, _b;
             if (dragging == false) {
                 return;
             }
@@ -29384,110 +29384,20 @@ class Joystick extends Container {
             let sideX = newPosition.x - startPosition.x;
             let sideY = newPosition.y - startPosition.y;
             let centerPoint = new Point(0, 0);
-            let angle = 0;
-            if (sideX == 0 && sideY == 0) {
-                return;
-            }
-            /**
-             * x:   -1 <-> 1
-             * y:   -1 <-> 1
-             *          Y
-             *          ^
-             *          |
-             *     180  |  90
-             *    ------------> X
-             *     270  |  360
-             *          |
-             *          |
-             */
-            let direction = Direction.LEFT;
-            if (sideX == 0) {
-                if (sideY > 0) {
-                    centerPoint.set(0, sideY > that.outerRadius ? that.outerRadius : sideY);
-                    angle = 270;
-                    direction = Direction.BOTTOM;
-                }
-                else {
-                    centerPoint.set(0, -(Math.abs(sideY) > that.outerRadius
-                        ? that.outerRadius
-                        : Math.abs(sideY)));
-                    angle = 90;
-                    direction = Direction.TOP;
-                }
-                that.inner.position.set(centerPoint.x, centerPoint.y);
-                power = that.getPower(centerPoint);
-                velocity = that.getVelocity(startPosition, newPosition, power);
-                (_b = (_a = that.settings).onChange) === null || _b === void 0 ? void 0 : _b.call(_a, { angle, direction, power, velocity });
-                return;
-            }
-            if (sideY == 0) {
-                if (sideX > 0) {
-                    centerPoint.set(Math.abs(sideX) > that.outerRadius
-                        ? that.outerRadius
-                        : Math.abs(sideX), 0);
-                    angle = 0;
-                    direction = Direction.LEFT;
-                }
-                else {
-                    centerPoint.set(-(Math.abs(sideX) > that.outerRadius
-                        ? that.outerRadius
-                        : Math.abs(sideX)), 0);
-                    angle = 180;
-                    direction = Direction.RIGHT;
-                }
-                that.inner.position.set(centerPoint.x, centerPoint.y);
-                power = that.getPower(centerPoint);
-                velocity = that.getVelocity(startPosition, newPosition, power);
-                (_d = (_c = that.settings).onChange) === null || _d === void 0 ? void 0 : _d.call(_c, { angle, direction, power, velocity });
-                return;
-            }
-            let tanVal = Math.abs(sideY / sideX);
-            let radian = Math.atan(tanVal);
-            angle = (radian * 180) / Math.PI;
-            let centerX = 0;
-            let centerY = 0;
-            if (sideX * sideX + sideY * sideY >=
-                that.outerRadius * that.outerRadius) {
-                centerX = that.outerRadius * Math.cos(radian);
-                centerY = that.outerRadius * Math.sin(radian);
+            if (Math.abs(sideX) > that.outerRadius ||
+                Math.abs(sideY) > that.outerRadius) {
+                let radian = Math.atan2(sideY, sideX);
+                centerPoint.set(Math.cos(radian) * that.outerRadius, Math.sin(radian) * that.outerRadius);
             }
             else {
-                centerX =
-                    Math.abs(sideX) > that.outerRadius
-                        ? that.outerRadius
-                        : Math.abs(sideX);
-                centerY =
-                    Math.abs(sideY) > that.outerRadius
-                        ? that.outerRadius
-                        : Math.abs(sideY);
+                centerPoint.set(sideX, sideY);
             }
-            if (sideY < 0) {
-                centerY = -Math.abs(centerY);
-            }
-            if (sideX < 0) {
-                centerX = -Math.abs(centerX);
-            }
-            if (sideX > 0 && sideY < 0) {
-                // < 90
-            }
-            else if (sideX < 0 && sideY < 0) {
-                // 90 ~ 180
-                angle = 180 - angle;
-            }
-            else if (sideX < 0 && sideY > 0) {
-                // 180 ~ 270
-                angle = angle + 180;
-            }
-            else if (sideX > 0 && sideY > 0) {
-                // 270 ~ 369
-                angle = 360 - angle;
-            }
-            centerPoint.set(centerX, centerY);
+            that.inner.position.set(centerPoint.x, centerPoint.y);
             power = that.getPower(centerPoint);
             velocity = that.getVelocity(startPosition, newPosition, power);
-            direction = that.getDirection(centerPoint);
-            that.inner.position.set(centerPoint.x, centerPoint.y);
-            (_f = (_e = that.settings).onChange) === null || _f === void 0 ? void 0 : _f.call(_e, { angle, direction, power, velocity });
+            let angle = Math.atan2(centerPoint.y, centerPoint.x);
+            let direction = that.getDirection(centerPoint);
+            (_b = (_a = that.settings).onChange) === null || _b === void 0 ? void 0 : _b.call(_a, { angle, direction, power, velocity });
         }
         this.on("pointerdown", onDragStart)
             .on("pointerup", onDragEnd)
@@ -29625,10 +29535,10 @@ app.ticker.add(() => {
     player.y += velocity.y;
     // Update player rotation based on horizontal velocity
     if (velocity.x < 0) {
-        targetRotation = 0.524;
+        targetRotation = 0.349;
     }
     else if (velocity.x > 0) {
-        targetRotation = -0.524;
+        targetRotation = -0.349;
     }
     else {
         targetRotation = 0;
@@ -29651,10 +29561,10 @@ const joystickSettings = {
         velocity.x = Math.cos(angle) * speed;
         velocity.y = Math.sin(angle) * speed;
         if (velocity.x < 0) {
-            targetRotation = 0.524;
+            targetRotation = 0.349;
         }
         else if (velocity.x > 0) {
-            targetRotation = -0.524;
+            targetRotation = -0.349;
         }
         else {
             targetRotation = 0;
