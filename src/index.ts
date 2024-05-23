@@ -1,5 +1,9 @@
 import { Application, Sprite } from "pixi.js";
-import { Joystick, JoystickSettings, JoystickChangeEvent } from "./control/joystick"; 
+import {
+  Joystick,
+  JoystickSettings,
+  JoystickChangeEvent,
+} from "./control/joystick";
 
 const app = new Application<HTMLCanvasElement>({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -49,9 +53,14 @@ const maxSpeed = 5;
 const acceleration = 0.2;
 const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
+let targetRotation = 0;
+
+// Linear interpolation function
+function lerp(start: number, end: number, t: number): number {
+  return start + (end - start) * t;
+}
 
 app.ticker.add(() => {
-
   // Acceleration
   if (keys.ArrowUp) {
     velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
@@ -85,6 +94,13 @@ app.ticker.add(() => {
 
   player.x += velocity.x;
   player.y += velocity.y;
+
+  // Update player rotation based on velocity
+  if (velocity.x !== 0 || velocity.y !== 0) {
+    targetRotation = Math.atan2(velocity.y, velocity.x);
+  }
+  
+  player.rotation = lerp(player.rotation, targetRotation, 0.1);
 });
 
 window.addEventListener("resize", () => {
@@ -93,16 +109,19 @@ window.addEventListener("resize", () => {
   player.y = app.screen.height / 2;
 });
 
-
 const joystickSettings: JoystickSettings = {
   width: 120,
   height: 120,
   speed: maxSpeed,
   onChange: (event: JoystickChangeEvent) => {
     const angle = Math.atan2(event.velocity.y, event.velocity.x);
-    const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
+    const speed = Math.sqrt(
+      event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y
+    );
     velocity.x = Math.cos(angle) * speed;
     velocity.y = Math.sin(angle) * speed;
+
+    targetRotation = angle;
   },
 
   onStart: () => {
@@ -111,9 +130,12 @@ const joystickSettings: JoystickSettings = {
 
   onEnd: () => {
     console.log("Joystick ended");
-    
+
     const slowDownInterval = setInterval(() => {
-      if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
+      if (
+        Math.abs(velocity.x) <= deceleration &&
+        Math.abs(velocity.y) <= deceleration
+      ) {
         velocity.x = 0;
         velocity.y = 0;
         clearInterval(slowDownInterval);
@@ -134,5 +156,8 @@ const joystickSettings: JoystickSettings = {
 };
 
 const joystick = new Joystick(joystickSettings);
-joystick.position.set(joystick.width / 2 + 20, app.screen.height - joystick.height / 2 - 20);
+joystick.position.set(
+  joystick.width / 2 + 20,
+  app.screen.height - joystick.height / 2 - 20
+);
 app.stage.addChild(joystick);
