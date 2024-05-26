@@ -29500,6 +29500,18 @@ let targetRotation = 0;
 function lerp(start, end, t) {
     return start + (end - start) * t;
 }
+// Create and position obstacles
+const obstacleTexture = "obstacle.png";
+const obstacles = [];
+const obstacleCount = 5;
+for (let i = 0; i < obstacleCount; i++) {
+    const obstacle = Sprite.from(obstacleTexture);
+    obstacle.anchor.set(0.5);
+    obstacle.x = Math.random() * app.screen.width;
+    obstacle.y = app.screen.height + Math.random() * app.screen.height;
+    obstacles.push(obstacle);
+    app.stage.addChild(obstacle);
+}
 app.ticker.add(() => {
     // Acceleration
     if (keys.ArrowUp) {
@@ -29543,8 +29555,16 @@ app.ticker.add(() => {
     else {
         targetRotation = 0;
     }
-    // Smoothly rotate towards the target rotation
     player.rotation = lerp(player.rotation, targetRotation, 0.1);
+    // Move obstacles upwards
+    for (const obstacle of obstacles) {
+        obstacle.y -= maxSpeed / 2;
+        // Recycle obstacle if it goes out of screen
+        if (obstacle.y < -obstacle.height) {
+            obstacle.y = app.screen.height + Math.random() * app.screen.height;
+            obstacle.x = Math.random() * app.screen.width;
+        }
+    }
 });
 window.addEventListener("resize", () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
@@ -29576,7 +29596,8 @@ const joystickSettings = {
     onEnd: () => {
         console.log("Joystick ended");
         const slowDownInterval = setInterval(() => {
-            if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
+            if (Math.abs(velocity.x) <= deceleration &&
+                Math.abs(velocity.y) <= deceleration) {
                 velocity.x = 0;
                 velocity.y = 0;
                 clearInterval(slowDownInterval);
