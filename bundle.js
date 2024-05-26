@@ -29501,18 +29501,25 @@ let isCollidingWithObstacle = false;
 function lerp(start, end, t) {
     return start + (end - start) * t;
 }
-// Create and position obstacles
-const obstacleTexture = "tree.png";
+// Obstacle textures
+const obstacleTextures = ["tree.png", "burg.png", "ice.png", "petal.png"]; // Replace with your obstacle image paths
 const obstacles = [];
 const obstacleCount = 10;
-for (let i = 0; i < obstacleCount; i++) {
-    const obstacle = Sprite.from(obstacleTexture);
+// Function to create a random obstacle
+function createRandomObstacle() {
+    const texture = obstacleTextures[Math.floor(Math.random() * obstacleTextures.length)];
+    const obstacle = Sprite.from(texture);
     obstacle.anchor.set(0.5);
     obstacle.x = Math.random() * app.screen.width;
     obstacle.y = app.screen.height + Math.random() * app.screen.height;
+    return obstacle;
+}
+// Create initial obstacles
+for (let i = 0; i < obstacleCount; i++) {
+    const obstacle = createRandomObstacle();
     obstacles.push(obstacle);
     app.stage.addChild(obstacle);
-    obstacle.scale.set(0.4, 0.3);
+    obstacle.scale.set(0.6, 0.6);
 }
 // Collision detection function
 function isColliding(a, b) {
@@ -29571,7 +29578,7 @@ app.ticker.add(() => {
     }
     // Move obstacles upwards
     for (const obstacle of obstacles) {
-        obstacle.y -= maxSpeed / 2;
+        obstacle.y -= maxSpeed / 2; // Adjust speed as necessary
         // Recycle obstacle if it goes out of screen
         if (obstacle.y < -obstacle.height) {
             obstacle.y = app.screen.height + Math.random() * app.screen.height;
