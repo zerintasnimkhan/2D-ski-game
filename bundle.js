@@ -29499,14 +29499,35 @@ let targetRotation = 0;
 let isCollidingWithObstacle = false;
 // Initial obstacle speed
 let obstacleSpeed = maxSpeed / 2;
+// Score variable
+let score = 0;
+const scoreText = new Text(`Score: ${score}`, new TextStyle({
+    fontFamily: "Arial",
+    fontSize: 24,
+    fill: "white",
+}));
+scoreText.x = 10;
+scoreText.y = 10;
+app.stage.addChild(scoreText);
 // Linear interpolation function
 function lerp(start, end, t) {
     return start + (end - start) * t;
 }
 // Obstacle textures
-const obstacleTextures = ["tree.png", "burg.png", "petal.png", "ice.png", "brunch.png", "burg.png"];
+const obstacleTextures = [
+    "tree.png",
+    "burg.png",
+    "petal.png",
+    "ice.png",
+    "brunch.png",
+    "burg.png",
+];
 const obstacles = [];
 const obstacleCount = 10;
+// points
+const collectibleTextures = ["star.png", "coin.png", "gem.png", "gemBlue.png", "gemRed.png"];
+const collectibles = [];
+const collectibleCount = 5;
 // Function to create a random obstacle
 function createRandomObstacle() {
     const texture = obstacleTextures[Math.floor(Math.random() * obstacleTextures.length)];
@@ -29516,6 +29537,15 @@ function createRandomObstacle() {
     obstacle.y = app.screen.height + Math.random() * app.screen.height;
     return obstacle;
 }
+// Function to create a random collectible
+function createRandomCollectible() {
+    const texture = collectibleTextures[Math.floor(Math.random() * collectibleTextures.length)];
+    const collectible = Sprite.from(texture);
+    collectible.anchor.set(0.5);
+    collectible.x = Math.random() * app.screen.width;
+    collectible.y = app.screen.height + Math.random() * app.screen.height;
+    return collectible;
+}
 // Create initial obstacles
 for (let i = 0; i < obstacleCount; i++) {
     const obstacle = createRandomObstacle();
@@ -29523,14 +29553,20 @@ for (let i = 0; i < obstacleCount; i++) {
     app.stage.addChild(obstacle);
     obstacle.scale.set(0.6, 0.6);
 }
+// Create initial collectibles
+for (let i = 0; i < collectibleCount; i++) {
+    const collectible = createRandomCollectible();
+    collectibles.push(collectible);
+    app.stage.addChild(collectible);
+}
 // Collision detection function
 function isColliding(a, b) {
     const aBounds = a.getBounds();
     const bBounds = b.getBounds();
-    return aBounds.x < bBounds.x + bBounds.width &&
+    return (aBounds.x < bBounds.x + bBounds.width &&
         aBounds.x + aBounds.width > bBounds.x &&
         aBounds.y < bBounds.y + bBounds.height &&
-        aBounds.y + aBounds.height > bBounds.y;
+        aBounds.y + aBounds.height > bBounds.y);
 }
 app.ticker.add(() => {
     if (!isCollidingWithObstacle) {
@@ -29594,11 +29630,31 @@ app.ticker.add(() => {
             velocity.y = 0;
             isCollidingWithObstacle = true;
             player.tint = 0xff0000; // Mark player red
+            score -= 1; // Decrease score on collision
+            scoreText.text = `Score: ${score}`;
+        }
+    }
+    // Move collectibles upwards
+    for (const collectible of collectibles) {
+        collectible.y -= obstacleSpeed;
+        // Recycle collectible if it goes out of screen
+        if (collectible.y < -collectible.height) {
+            collectible.y = app.screen.height + Math.random() * app.screen.height;
+            collectible.x = Math.random() * app.screen.width;
+        }
+        // Check for collision with player
+        if (isColliding(player, collectible)) {
+            console.log("Collectible collected!");
+            // Handle collectible collection
+            collectible.y = app.screen.height + Math.random() * app.screen.height;
+            collectible.x = Math.random() * app.screen.width;
+            score += 20; // Increase score on collection
+            scoreText.text = `Score: ${score}`;
         }
     }
     // Reset collision state if no collision detected
     if (isCollidingWithObstacle) {
-        isCollidingWithObstacle = obstacles.some(obstacle => isColliding(player, obstacle));
+        isCollidingWithObstacle = obstacles.some((obstacle) => isColliding(player, obstacle));
         if (!isCollidingWithObstacle) {
             player.tint = 0xffffff; // Reset player color
         }
@@ -29606,7 +29662,7 @@ app.ticker.add(() => {
 });
 // Increase obstacle speed over time
 setInterval(() => {
-    obstacleSpeed += 0.2;
+    obstacleSpeed += 0.1;
 }, 5000);
 window.addEventListener("resize", () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
@@ -29638,7 +29694,8 @@ const joystickSettings = {
     onEnd: () => {
         console.log("Joystick ended");
         const slowDownInterval = setInterval(() => {
-            if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
+            if (Math.abs(velocity.x) <= deceleration &&
+                Math.abs(velocity.y) <= deceleration) {
                 velocity.x = 0;
                 velocity.y = 0;
                 clearInterval(slowDownInterval);
