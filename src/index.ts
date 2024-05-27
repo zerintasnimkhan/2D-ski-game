@@ -1,5 +1,9 @@
-import { Application, Sprite } from "pixi.js";
-import { Joystick, JoystickSettings, JoystickChangeEvent } from "./control/joystick"; 
+import { Application, Sprite, Text, TextStyle } from "pixi.js";
+import {
+  Joystick,
+  JoystickSettings,
+  JoystickChangeEvent,
+} from "./control/joystick";
 
 const app = new Application<HTMLCanvasElement>({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -55,24 +59,62 @@ let isCollidingWithObstacle = false;
 // Initial obstacle speed
 let obstacleSpeed = maxSpeed / 2;
 
+// Score variable
+let score = 0;
+const scoreText = new Text(
+  `Score: ${score}`,
+  new TextStyle({
+    fontFamily: "Arial",
+    fontSize: 24,
+    fill: "white",
+  })
+);
+scoreText.x = 10;
+scoreText.y = 10;
+app.stage.addChild(scoreText);
+
 // Linear interpolation function
 function lerp(start: number, end: number, t: number): number {
   return start + (end - start) * t;
 }
 
 // Obstacle textures
-const obstacleTextures = ["tree.png", "burg.png", "petal.png", "ice.png", "brunch.png", "burg.png"]; 
+const obstacleTextures = [
+  "tree.png",
+  "burg.png",
+  "petal.png",
+  "ice.png",
+  "brunch.png",
+  "burg.png",
+];
 const obstacles: Sprite[] = [];
 const obstacleCount = 10;
 
+// points
+const collectibleTextures = ["star.png", "coin.png", "gem.png", "gemBlue.png", "gemRed.png"];
+const collectibles: Sprite[] = [];
+const collectibleCount = 5;
+
 // Function to create a random obstacle
 function createRandomObstacle(): Sprite {
-  const texture = obstacleTextures[Math.floor(Math.random() * obstacleTextures.length)];
+  const texture =
+    obstacleTextures[Math.floor(Math.random() * obstacleTextures.length)];
   const obstacle = Sprite.from(texture);
   obstacle.anchor.set(0.5);
   obstacle.x = Math.random() * app.screen.width;
   obstacle.y = app.screen.height + Math.random() * app.screen.height;
   return obstacle;
+}
+
+// Function to create a random collectible
+function createRandomCollectible(): Sprite {
+  const texture =
+    collectibleTextures[Math.floor(Math.random() * collectibleTextures.length)];
+  const collectible = Sprite.from(texture);
+  collectible.anchor.set(0.5);
+  collectible.x = Math.random() * app.screen.width;
+  collectible.y = app.screen.height + Math.random() * app.screen.height;
+  return collectible;
 }
 
 // Create initial obstacles
@@ -83,14 +125,23 @@ for (let i = 0; i < obstacleCount; i++) {
   obstacle.scale.set(0.6, 0.6);
 }
 
+// Create initial collectibles
+for (let i = 0; i < collectibleCount; i++) {
+  const collectible = createRandomCollectible();
+  collectibles.push(collectible);
+  app.stage.addChild(collectible);
+}
+
 // Collision detection function
 function isColliding(a: Sprite, b: Sprite): boolean {
   const aBounds = a.getBounds();
   const bBounds = b.getBounds();
-  return aBounds.x < bBounds.x + bBounds.width &&
-         aBounds.x + aBounds.width > bBounds.x &&
-         aBounds.y < bBounds.y + bBounds.height &&
-         aBounds.y + aBounds.height > bBounds.y;
+  return (
+    aBounds.x < bBounds.x + bBounds.width &&
+    aBounds.x + aBounds.width > bBounds.x &&
+    aBounds.y < bBounds.y + bBounds.height &&
+    aBounds.y + aBounds.height > bBounds.y
+  );
 }
 
 app.ticker.add(() => {
@@ -131,11 +182,11 @@ app.ticker.add(() => {
 
     // Update player rotation based on horizontal velocity
     if (velocity.x < 0) {
-      targetRotation = 0.349; 
+      targetRotation = 0.349;
     } else if (velocity.x > 0) {
       targetRotation = -0.349;
     } else {
-      targetRotation = 0; 
+      targetRotation = 0;
     }
 
     player.rotation = lerp(player.rotation, targetRotation, 0.1);
@@ -143,7 +194,7 @@ app.ticker.add(() => {
 
   // Move obstacles upwards
   for (const obstacle of obstacles) {
-    obstacle.y -= obstacleSpeed; 
+    obstacle.y -= obstacleSpeed;
 
     // Recycle obstacle if it goes out of screen
     if (obstacle.y < -obstacle.height) {
@@ -159,23 +210,47 @@ app.ticker.add(() => {
       velocity.y = 0;
       isCollidingWithObstacle = true;
       player.tint = 0xff0000; // Mark player red
+      score -= 1; // Decrease score on collision
+      scoreText.text = `Score: ${score}`;
+    }
+  }
+
+  // Move collectibles upwards
+  for (const collectible of collectibles) {
+    collectible.y -= obstacleSpeed;
+
+    // Recycle collectible if it goes out of screen
+    if (collectible.y < -collectible.height) {
+      collectible.y = app.screen.height + Math.random() * app.screen.height;
+      collectible.x = Math.random() * app.screen.width;
+    }
+
+    // Check for collision with player
+    if (isColliding(player, collectible)) {
+      console.log("Collectible collected!");
+      // Handle collectible collection
+      collectible.y = app.screen.height + Math.random() * app.screen.height;
+      collectible.x = Math.random() * app.screen.width;
+      score += 20; // Increase score on collection
+      scoreText.text = `Score: ${score}`;
     }
   }
 
   // Reset collision state if no collision detected
   if (isCollidingWithObstacle) {
-    isCollidingWithObstacle = obstacles.some(obstacle => isColliding(player, obstacle));
+    isCollidingWithObstacle = obstacles.some((obstacle) =>
+      isColliding(player, obstacle)
+    );
     if (!isCollidingWithObstacle) {
       player.tint = 0xffffff; // Reset player color
     }
   }
-
 });
 
 // Increase obstacle speed over time
 setInterval(() => {
-  obstacleSpeed += 0.2;
-}, 5000); 
+  obstacleSpeed += 0.1;
+}, 5000);
 
 window.addEventListener("resize", () => {
   app.renderer.resize(window.innerWidth, window.innerHeight);
@@ -189,14 +264,16 @@ const joystickSettings: JoystickSettings = {
   speed: maxSpeed,
   onChange: (event: JoystickChangeEvent) => {
     const angle = Math.atan2(event.velocity.y, event.velocity.x);
-    const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
+    const speed = Math.sqrt(
+      event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y
+    );
     velocity.x = Math.cos(angle) * speed;
     velocity.y = Math.sin(angle) * speed;
 
     if (velocity.x < 0) {
       targetRotation = 0.349;
     } else if (velocity.x > 0) {
-      targetRotation = -0.349; 
+      targetRotation = -0.349;
     } else {
       targetRotation = 0;
     }
@@ -208,9 +285,12 @@ const joystickSettings: JoystickSettings = {
 
   onEnd: () => {
     console.log("Joystick ended");
-    
+
     const slowDownInterval = setInterval(() => {
-      if (Math.abs(velocity.x) <= deceleration && Math.abs(velocity.y) <= deceleration) {
+      if (
+        Math.abs(velocity.x) <= deceleration &&
+        Math.abs(velocity.y) <= deceleration
+      ) {
         velocity.x = 0;
         velocity.y = 0;
         clearInterval(slowDownInterval);
@@ -231,5 +311,8 @@ const joystickSettings: JoystickSettings = {
 };
 
 const joystick = new Joystick(joystickSettings);
-joystick.position.set(joystick.width / 2 + 20, app.screen.height - joystick.height / 2 - 20);
+joystick.position.set(
+  joystick.width / 2 + 20,
+  app.screen.height - joystick.height / 2 - 20
+);
 app.stage.addChild(joystick);
