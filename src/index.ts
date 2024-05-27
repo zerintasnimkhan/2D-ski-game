@@ -1,4 +1,4 @@
-import { Application, Sprite } from "pixi.js";
+import { Application, Sprite, TilingSprite, Texture } from "pixi.js";
 import { Joystick, JoystickSettings, JoystickChangeEvent } from "./control/joystick"; 
 
 const app = new Application<HTMLCanvasElement>({
@@ -9,6 +9,15 @@ const app = new Application<HTMLCanvasElement>({
   width: window.innerWidth,
   height: window.innerHeight,
 });
+
+// Add snowy background texture
+const snowyTexture = Texture.from("snowy-background.png");
+const background = new TilingSprite(
+  snowyTexture,
+  app.screen.width,
+  app.screen.height
+);
+app.stage.addChild(background);
 
 const player: Sprite = Sprite.from("player.png");
 
@@ -151,21 +160,30 @@ app.ticker.add(() => {
     // Check for collision with player
     if (isColliding(player, obstacle)) {
       console.log("Collision detected!");
-      // Handle collision (stop player movement)
+      // Handle collision (stop player movement and mark red)
       velocity.x = 0;
       velocity.y = 0;
       isCollidingWithObstacle = true;
+      player.tint = 0xff0000; // Mark player red
     }
   }
 
   // Reset collision state if no collision detected
   if (isCollidingWithObstacle) {
     isCollidingWithObstacle = obstacles.some(obstacle => isColliding(player, obstacle));
+    if (!isCollidingWithObstacle) {
+      player.tint = 0xffffff; // Reset player color
+    }
   }
+
+  // Move background to create a scrolling effect
+  background.tilePosition.y += maxSpeed / 2;
 });
 
 window.addEventListener("resize", () => {
   app.renderer.resize(window.innerWidth, window.innerHeight);
+  background.width = app.screen.width;
+  background.height = app.screen.height;
   player.x = app.screen.width / 2;
   player.y = app.screen.height / 2;
 });
