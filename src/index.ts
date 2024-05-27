@@ -1,4 +1,4 @@
-import { Application, Sprite, TilingSprite, Texture } from "pixi.js";
+import { Application, Sprite } from "pixi.js";
 import { Joystick, JoystickSettings, JoystickChangeEvent } from "./control/joystick"; 
 
 const app = new Application<HTMLCanvasElement>({
@@ -9,15 +9,6 @@ const app = new Application<HTMLCanvasElement>({
   width: window.innerWidth,
   height: window.innerHeight,
 });
-
-// Add snowy background texture
-const snowyTexture = Texture.from("snowy-background.png");
-const background = new TilingSprite(
-  snowyTexture,
-  app.screen.width,
-  app.screen.height
-);
-app.stage.addChild(background);
 
 const player: Sprite = Sprite.from("player.png");
 
@@ -61,13 +52,16 @@ let velocity = { x: 0, y: 0 };
 let targetRotation = 0;
 let isCollidingWithObstacle = false;
 
+// Initial obstacle speed
+let obstacleSpeed = maxSpeed / 2;
+
 // Linear interpolation function
 function lerp(start: number, end: number, t: number): number {
   return start + (end - start) * t;
 }
 
 // Obstacle textures
-const obstacleTextures = ["tree.png", "burg.png", "petal.png", "ice.png", "brunch.png"]; 
+const obstacleTextures = ["tree.png", "burg.png", "petal.png", "ice.png", "brunch.png", "burg.png"]; 
 const obstacles: Sprite[] = [];
 const obstacleCount = 10;
 
@@ -149,7 +143,7 @@ app.ticker.add(() => {
 
   // Move obstacles upwards
   for (const obstacle of obstacles) {
-    obstacle.y -= maxSpeed / 2; 
+    obstacle.y -= obstacleSpeed; 
 
     // Recycle obstacle if it goes out of screen
     if (obstacle.y < -obstacle.height) {
@@ -176,14 +170,15 @@ app.ticker.add(() => {
     }
   }
 
-  // Move background to create a scrolling effect
-  background.tilePosition.y += maxSpeed / 2;
 });
+
+// Increase obstacle speed over time
+setInterval(() => {
+  obstacleSpeed += 0.2;
+}, 5000); 
 
 window.addEventListener("resize", () => {
   app.renderer.resize(window.innerWidth, window.innerHeight);
-  background.width = app.screen.width;
-  background.height = app.screen.height;
   player.x = app.screen.width / 2;
   player.y = app.screen.height / 2;
 });
