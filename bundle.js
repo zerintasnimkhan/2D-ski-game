@@ -29469,10 +29469,6 @@ const app = new Application({
     width: window.innerWidth,
     height: window.innerHeight,
 });
-// Add snowy background texture
-const snowyTexture = Texture.from("snowy-background.png");
-const background = new TilingSprite(snowyTexture, app.screen.width, app.screen.height);
-app.stage.addChild(background);
 const player = Sprite.from("player.png");
 player.anchor.set(0.5);
 player.x = app.screen.width / 2;
@@ -29501,12 +29497,14 @@ const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
 let targetRotation = 0;
 let isCollidingWithObstacle = false;
+// Initial obstacle speed
+let obstacleSpeed = maxSpeed / 2;
 // Linear interpolation function
 function lerp(start, end, t) {
     return start + (end - start) * t;
 }
 // Obstacle textures
-const obstacleTextures = ["tree.png", "burg.png", "petal.png", "ice.png", "brunch.png"];
+const obstacleTextures = ["tree.png", "burg.png", "petal.png", "ice.png", "brunch.png", "burg.png"];
 const obstacles = [];
 const obstacleCount = 10;
 // Function to create a random obstacle
@@ -29582,7 +29580,7 @@ app.ticker.add(() => {
     }
     // Move obstacles upwards
     for (const obstacle of obstacles) {
-        obstacle.y -= maxSpeed / 2;
+        obstacle.y -= obstacleSpeed;
         // Recycle obstacle if it goes out of screen
         if (obstacle.y < -obstacle.height) {
             obstacle.y = app.screen.height + Math.random() * app.screen.height;
@@ -29605,13 +29603,13 @@ app.ticker.add(() => {
             player.tint = 0xffffff; // Reset player color
         }
     }
-    // Move background to create a scrolling effect
-    background.tilePosition.y += maxSpeed / 2;
 });
+// Increase obstacle speed over time
+setInterval(() => {
+    obstacleSpeed += 0.2;
+}, 5000);
 window.addEventListener("resize", () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
-    background.width = app.screen.width;
-    background.height = app.screen.height;
     player.x = app.screen.width / 2;
     player.y = app.screen.height / 2;
 });
