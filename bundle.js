@@ -29480,7 +29480,7 @@ const keys = {
     ArrowDown: false,
     ArrowLeft: false,
     ArrowRight: false,
-    Enter: false,
+    Enter: false, // Initialize Enter key state
 };
 window.addEventListener("keydown", (event) => {
     if (event.key in keys) {
@@ -29500,7 +29500,6 @@ const acceleration = 0.2;
 const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
 let targetRotation = 0;
-let isCollidingWithObstacle = false;
 // Initial obstacle speed
 let obstacleSpeed = maxSpeed / 2;
 // Score variable
@@ -29517,7 +29516,6 @@ app.stage.addChild(scoreText);
 function lerp(start, end, t) {
     return start + (end - start) * t;
 }
-// Obstacle textures
 const obstacleTextures = [
     "tree.png",
     "burg.png",
@@ -29527,8 +29525,13 @@ const obstacleTextures = [
 ];
 const obstacles = [];
 const obstacleCount = 10;
-// Collectible textures
-const collectibleTextures = ["star.png", "coin.png", "gem.png", "gemBlue.png", "gemRed.png"];
+const collectibleTextures = [
+    "star.png",
+    "coin.png",
+    "gem.png",
+    "gemBlue.png",
+    "gemRed.png",
+];
 const collectibles = [];
 const collectibleCount = 5;
 // Function to create a random obstacle
@@ -29576,7 +29579,6 @@ let gameState = "start";
 function updateGameState(newState) {
     gameState = newState;
     if (newState === "play") {
-        isCollidingWithObstacle = false;
         player.tint = 0xffffff; // Reset player color
     }
     startButtonContainer.visible = newState === "start";
@@ -29592,7 +29594,7 @@ function resetGame() {
     player.y = app.screen.height / 2;
     velocity = { x: 0, y: 0 };
     obstacleSpeed = maxSpeed / 2;
-    player.tint = 0xffffff;
+    player.tint = 0xffffff; // Reset player color
     for (const obstacle of obstacles) {
         obstacle.x = Math.random() * app.screen.width;
         obstacle.y = app.screen.height + Math.random() * app.screen.height;
@@ -29601,54 +29603,55 @@ function resetGame() {
         collectible.x = Math.random() * app.screen.width;
         collectible.y = app.screen.height + Math.random() * app.screen.height;
     }
+    updateGameState("play");
 }
 app.ticker.add(() => {
     if (gameState === "play") {
-        if (!isCollidingWithObstacle) {
-            // Acceleration
-            if (keys.ArrowUp) {
-                velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
-            }
-            if (keys.ArrowDown) {
-                velocity.y = Math.min(velocity.y + acceleration, maxSpeed);
-            }
-            if (keys.ArrowLeft) {
-                velocity.x = Math.max(velocity.x - acceleration, -maxSpeed);
-            }
-            if (keys.ArrowRight) {
-                velocity.x = Math.min(velocity.x + acceleration, maxSpeed);
-            }
-            // Deceleration
-            if (!keys.ArrowUp && !keys.ArrowDown) {
-                if (velocity.y > 0) {
-                    velocity.y = Math.max(velocity.y - deceleration, 0);
-                }
-                else {
-                    velocity.y = Math.min(velocity.y + deceleration, 0);
-                }
-            }
-            if (!keys.ArrowLeft && !keys.ArrowRight) {
-                if (velocity.x > 0) {
-                    velocity.x = Math.max(velocity.x - deceleration, 0);
-                }
-                else {
-                    velocity.x = Math.min(velocity.x + deceleration, 0);
-                }
-            }
-            player.x += velocity.x;
-            player.y += velocity.y;
-            // Update player rotation based on horizontal velocity
-            if (velocity.x < 0) {
-                targetRotation = 0.349;
-            }
-            else if (velocity.x > 0) {
-                targetRotation = -0.349;
+        score += 0.1;
+        scoreText.text = `Score: ${Math.round(score)}`;
+        // Acceleration
+        if (keys.ArrowUp) {
+            velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
+        }
+        if (keys.ArrowDown) {
+            velocity.y = Math.min(velocity.y + acceleration, maxSpeed);
+        }
+        if (keys.ArrowLeft) {
+            velocity.x = Math.max(velocity.x - acceleration, -maxSpeed);
+        }
+        if (keys.ArrowRight) {
+            velocity.x = Math.min(velocity.x + acceleration, maxSpeed);
+        }
+        // Deceleration
+        if (!keys.ArrowUp && !keys.ArrowDown) {
+            if (velocity.y > 0) {
+                velocity.y = Math.max(velocity.y - deceleration, 0);
             }
             else {
-                targetRotation = 0;
+                velocity.y = Math.min(velocity.y + deceleration, 0);
             }
-            player.rotation = lerp(player.rotation, targetRotation, 0.1);
         }
+        if (!keys.ArrowLeft && !keys.ArrowRight) {
+            if (velocity.x > 0) {
+                velocity.x = Math.max(velocity.x - deceleration, 0);
+            }
+            else {
+                velocity.x = Math.min(velocity.x + deceleration, 0);
+            }
+        }
+        player.x += velocity.x;
+        player.y += velocity.y;
+        // Update player rotation based on horizontal velocity
+        if (velocity.x < 0) {
+            targetRotation = 0.349;
+        }
+        else if (velocity.x > 0) {
+            targetRotation = -0.349;
+        }
+        else {
+            targetRotation = 0;
+        }
+        player.rotation = lerp(player.rotation, targetRotation, 0.1);
         // Move obstacles upwards
         for (const obstacle of obstacles) {
             obstacle.y -= obstacleSpeed;
@@ -29660,13 +29663,15 @@ app.ticker.add(() => {
             // Check for collision with player
             if (isColliding(player, obstacle)) {
                 console.log("Collision detected!");
-                // Handle collision (stop player movement and mark red)
-                velocity.x = 0;
-                velocity.y = 0;
-                isCollidingWithObstacle = true;
+                // Handle collision (reduce speed and mark red)
+                velocity.x *= 0.5;
+                velocity.y *= 0.5;
                 player.tint = 0xff0000; // Mark player red
-                score -= 5; // Decrease score on collision
-                scoreText.text = `Score: ${score}`;
+                setTimeout(() => {
+                    player.tint = 0xffffff;
+                }, 200);
+                score -= 5;
+                scoreText.text = `Score: ${Math.round(score)}`;
             }
         }
         // Move collectibles upwards
@@ -29683,7 +29688,7 @@ app.ticker.add(() => {
                 // Handle collectible collection (remove and reset position)
                 collectible.y = app.screen.height + Math.random() * app.screen.height;
                 collectible.x = Math.random() * app.screen.width;
-                score += 10; // Increase score on collection
+                score += 5;
                 scoreText.text = `Score: ${score}`;
             }
         }
@@ -29709,7 +29714,8 @@ const joystickSettings = {
     onChange: (event) => {
         if (gameState === "play") {
             const angle = Math.atan2(event.velocity.y, event.velocity.x);
-            const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
+            const speed = Math.sqrt(event.velocity.x * event.velocity.x +
+                event.velocity.y * event.velocity.y);
             velocity.x = Math.cos(angle) * speed;
             velocity.y = Math.sin(angle) * speed;
             if (velocity.x < 0) {
@@ -29759,7 +29765,7 @@ const uiContainer = new Container();
 app.stage.addChild(uiContainer);
 const buttonStyle = new TextStyle({
     fontFamily: "Arial",
-    fontSize: 36,
+    fontSize: 24,
     fill: "white",
     stroke: "black",
     strokeThickness: 4,
@@ -29801,7 +29807,6 @@ gameOverText.x = app.screen.width / 2 - gameOverText.width / 2;
 gameOverText.y = app.screen.height / 2 - gameOverText.height / 2;
 gameOverText.visible = false;
 uiContainer.addChild(gameOverText);
-// "Play Again" Container
 const playAgainContainer = new Container();
 playAgainContainer.visible = false;
 uiContainer.addChild(playAgainContainer);
@@ -29836,6 +29841,7 @@ function handleEnterKey() {
         updateGameState("play");
     }
     else if (gameState === "gameOver") {
+        updateGameState("start");
     }
 }
 
