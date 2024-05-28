@@ -29480,10 +29480,14 @@ const keys = {
     ArrowDown: false,
     ArrowLeft: false,
     ArrowRight: false,
+    Enter: false,
 };
 window.addEventListener("keydown", (event) => {
     if (event.key in keys) {
         keys[event.key] = true;
+        if (event.key === "Enter") {
+            handleEnterKey();
+        }
     }
 });
 window.addEventListener("keyup", (event) => {
@@ -29517,14 +29521,13 @@ function lerp(start, end, t) {
 const obstacleTextures = [
     "tree.png",
     "burg.png",
-    "petal.png",
     "ice.png",
     "brunch.png",
     "burg.png",
 ];
 const obstacles = [];
 const obstacleCount = 10;
-// points
+// Collectible textures
 const collectibleTextures = ["star.png", "coin.png", "gem.png", "gemBlue.png", "gemRed.png"];
 const collectibles = [];
 const collectibleCount = 5;
@@ -29558,6 +29561,7 @@ for (let i = 0; i < collectibleCount; i++) {
     const collectible = createRandomCollectible();
     collectibles.push(collectible);
     app.stage.addChild(collectible);
+    //collectible.scale.set(2, 2);
 }
 // Collision detection function
 function isColliding(a, b) {
@@ -29568,101 +29572,130 @@ function isColliding(a, b) {
         aBounds.y < bBounds.y + bBounds.height &&
         aBounds.y + aBounds.height > bBounds.y);
 }
-app.ticker.add(() => {
-    if (!isCollidingWithObstacle) {
-        // Acceleration
-        if (keys.ArrowUp) {
-            velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
-        }
-        if (keys.ArrowDown) {
-            velocity.y = Math.min(velocity.y + acceleration, maxSpeed);
-        }
-        if (keys.ArrowLeft) {
-            velocity.x = Math.max(velocity.x - acceleration, -maxSpeed);
-        }
-        if (keys.ArrowRight) {
-            velocity.x = Math.min(velocity.x + acceleration, maxSpeed);
-        }
-        // Deceleration
-        if (!keys.ArrowUp && !keys.ArrowDown) {
-            if (velocity.y > 0) {
-                velocity.y = Math.max(velocity.y - deceleration, 0);
-            }
-            else {
-                velocity.y = Math.min(velocity.y + deceleration, 0);
-            }
-        }
-        if (!keys.ArrowLeft && !keys.ArrowRight) {
-            if (velocity.x > 0) {
-                velocity.x = Math.max(velocity.x - deceleration, 0);
-            }
-            else {
-                velocity.x = Math.min(velocity.x + deceleration, 0);
-            }
-        }
-        player.x += velocity.x;
-        player.y += velocity.y;
-        // Update player rotation based on horizontal velocity
-        if (velocity.x < 0) {
-            targetRotation = 0.349;
-        }
-        else if (velocity.x > 0) {
-            targetRotation = -0.349;
-        }
-        else {
-            targetRotation = 0;
-        }
-        player.rotation = lerp(player.rotation, targetRotation, 0.1);
+let gameState = "start";
+function updateGameState(newState) {
+    gameState = newState;
+    if (newState === "play") {
+        isCollidingWithObstacle = false;
+        player.tint = 0xffffff; // Reset player color
     }
-    // Move obstacles upwards
+    startButtonContainer.visible = newState === "start";
+    playButtonContainer.visible = newState === "pause";
+    pauseButtonContainer.visible = newState === "play";
+    gameOverText.visible = newState === "gameOver";
+    playAgainContainer.visible = newState === "gameOver";
+}
+function resetGame() {
+    score = 0;
+    scoreText.text = `Score: ${score}`;
+    player.x = app.screen.width / 2;
+    player.y = app.screen.height / 2;
+    velocity = { x: 0, y: 0 };
+    obstacleSpeed = maxSpeed / 2;
+    player.tint = 0xffffff;
     for (const obstacle of obstacles) {
-        obstacle.y -= obstacleSpeed;
-        // Recycle obstacle if it goes out of screen
-        if (obstacle.y < -obstacle.height) {
-            obstacle.y = app.screen.height + Math.random() * app.screen.height;
-            obstacle.x = Math.random() * app.screen.width;
-        }
-        // Check for collision with player
-        if (isColliding(player, obstacle)) {
-            console.log("Collision detected!");
-            // Handle collision (stop player movement and mark red)
-            velocity.x = 0;
-            velocity.y = 0;
-            isCollidingWithObstacle = true;
-            player.tint = 0xff0000; // Mark player red
-            score -= 1; // Decrease score on collision
-            scoreText.text = `Score: ${score}`;
-        }
+        obstacle.x = Math.random() * app.screen.width;
+        obstacle.y = app.screen.height + Math.random() * app.screen.height;
     }
-    // Move collectibles upwards
     for (const collectible of collectibles) {
-        collectible.y -= obstacleSpeed;
-        // Recycle collectible if it goes out of screen
-        if (collectible.y < -collectible.height) {
-            collectible.y = app.screen.height + Math.random() * app.screen.height;
-            collectible.x = Math.random() * app.screen.width;
-        }
-        // Check for collision with player
-        if (isColliding(player, collectible)) {
-            console.log("Collectible collected!");
-            // Handle collectible collection
-            collectible.y = app.screen.height + Math.random() * app.screen.height;
-            collectible.x = Math.random() * app.screen.width;
-            score += 20; // Increase score on collection
-            scoreText.text = `Score: ${score}`;
-        }
+        collectible.x = Math.random() * app.screen.width;
+        collectible.y = app.screen.height + Math.random() * app.screen.height;
     }
-    // Reset collision state if no collision detected
-    if (isCollidingWithObstacle) {
-        isCollidingWithObstacle = obstacles.some((obstacle) => isColliding(player, obstacle));
+}
+app.ticker.add(() => {
+    if (gameState === "play") {
         if (!isCollidingWithObstacle) {
-            player.tint = 0xffffff; // Reset player color
+            // Acceleration
+            if (keys.ArrowUp) {
+                velocity.y = Math.max(velocity.y - acceleration, -maxSpeed);
+            }
+            if (keys.ArrowDown) {
+                velocity.y = Math.min(velocity.y + acceleration, maxSpeed);
+            }
+            if (keys.ArrowLeft) {
+                velocity.x = Math.max(velocity.x - acceleration, -maxSpeed);
+            }
+            if (keys.ArrowRight) {
+                velocity.x = Math.min(velocity.x + acceleration, maxSpeed);
+            }
+            // Deceleration
+            if (!keys.ArrowUp && !keys.ArrowDown) {
+                if (velocity.y > 0) {
+                    velocity.y = Math.max(velocity.y - deceleration, 0);
+                }
+                else {
+                    velocity.y = Math.min(velocity.y + deceleration, 0);
+                }
+            }
+            if (!keys.ArrowLeft && !keys.ArrowRight) {
+                if (velocity.x > 0) {
+                    velocity.x = Math.max(velocity.x - deceleration, 0);
+                }
+                else {
+                    velocity.x = Math.min(velocity.x + deceleration, 0);
+                }
+            }
+            player.x += velocity.x;
+            player.y += velocity.y;
+            // Update player rotation based on horizontal velocity
+            if (velocity.x < 0) {
+                targetRotation = 0.349;
+            }
+            else if (velocity.x > 0) {
+                targetRotation = -0.349;
+            }
+            else {
+                targetRotation = 0;
+            }
+            player.rotation = lerp(player.rotation, targetRotation, 0.1);
+        }
+        // Move obstacles upwards
+        for (const obstacle of obstacles) {
+            obstacle.y -= obstacleSpeed;
+            // Recycle obstacle if it goes out of screen
+            if (obstacle.y < -obstacle.height) {
+                obstacle.y = app.screen.height + Math.random() * app.screen.height;
+                obstacle.x = Math.random() * app.screen.width;
+            }
+            // Check for collision with player
+            if (isColliding(player, obstacle)) {
+                console.log("Collision detected!");
+                // Handle collision (stop player movement and mark red)
+                velocity.x = 0;
+                velocity.y = 0;
+                isCollidingWithObstacle = true;
+                player.tint = 0xff0000; // Mark player red
+                score -= 5; // Decrease score on collision
+                scoreText.text = `Score: ${score}`;
+            }
+        }
+        // Move collectibles upwards
+        for (const collectible of collectibles) {
+            collectible.y -= obstacleSpeed;
+            // Recycle collectible if it goes out of screen
+            if (collectible.y < -collectible.height) {
+                collectible.y = app.screen.height + Math.random() * app.screen.height;
+                collectible.x = Math.random() * app.screen.width;
+            }
+            // Check for collision with player
+            if (isColliding(player, collectible)) {
+                console.log("Collectible collected!");
+                // Handle collectible collection (remove and reset position)
+                collectible.y = app.screen.height + Math.random() * app.screen.height;
+                collectible.x = Math.random() * app.screen.width;
+                score += 10; // Increase score on collection
+                scoreText.text = `Score: ${score}`;
+            }
+        }
+        if (score < 0) {
+            updateGameState("gameOver");
         }
     }
 });
-// Increase obstacle speed over time
 setInterval(() => {
-    obstacleSpeed += 0.1;
+    if (gameState === "play") {
+        obstacleSpeed += 0.1;
+    }
 }, 5000);
 window.addEventListener("resize", () => {
     app.renderer.resize(window.innerWidth, window.innerHeight);
@@ -29674,18 +29707,20 @@ const joystickSettings = {
     height: 120,
     speed: maxSpeed,
     onChange: (event) => {
-        const angle = Math.atan2(event.velocity.y, event.velocity.x);
-        const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
-        velocity.x = Math.cos(angle) * speed;
-        velocity.y = Math.sin(angle) * speed;
-        if (velocity.x < 0) {
-            targetRotation = 0.349;
-        }
-        else if (velocity.x > 0) {
-            targetRotation = -0.349;
-        }
-        else {
-            targetRotation = 0;
+        if (gameState === "play") {
+            const angle = Math.atan2(event.velocity.y, event.velocity.x);
+            const speed = Math.sqrt(event.velocity.x * event.velocity.x + event.velocity.y * event.velocity.y);
+            velocity.x = Math.cos(angle) * speed;
+            velocity.y = Math.sin(angle) * speed;
+            if (velocity.x < 0) {
+                targetRotation = 0.349;
+            }
+            else if (velocity.x > 0) {
+                targetRotation = -0.349;
+            }
+            else {
+                targetRotation = 0;
+            }
         }
     },
     onStart: () => {
@@ -29720,6 +29755,89 @@ const joystickSettings = {
 const joystick = new Joystick(joystickSettings);
 joystick.position.set(joystick.width / 2 + 20, app.screen.height - joystick.height / 2 - 20);
 app.stage.addChild(joystick);
+const uiContainer = new Container();
+app.stage.addChild(uiContainer);
+const buttonStyle = new TextStyle({
+    fontFamily: "Arial",
+    fontSize: 36,
+    fill: "white",
+    stroke: "black",
+    strokeThickness: 4,
+});
+function createButton(text, x, y, onClick) {
+    const button = new Container();
+    const buttonBackground = new Graphics()
+        .beginFill(0x000000, 0.5)
+        .drawRoundedRect(0, 0, 120, 50, 10)
+        .endFill();
+    const buttonText = new Text(text, buttonStyle);
+    buttonText.anchor.set(0.5);
+    buttonText.x = 60;
+    buttonText.y = 25;
+    button.addChild(buttonBackground);
+    button.addChild(buttonText);
+    buttonBackground.interactive = true;
+    buttonBackground.on("pointerdown", onClick);
+    button.x = x;
+    button.y = y;
+    return button;
+}
+const startButtonContainer = createButton("Start", app.screen.width / 2 - 60, app.screen.height / 2 - 25, () => updateGameState("play"));
+uiContainer.addChild(startButtonContainer);
+const pauseButtonContainer = createButton("Pause", app.screen.width - 140, 20, () => updateGameState("pause"));
+pauseButtonContainer.visible = false;
+uiContainer.addChild(pauseButtonContainer);
+const playButtonContainer = createButton("Play", app.screen.width - 140, 20, () => updateGameState("play"));
+playButtonContainer.visible = false;
+uiContainer.addChild(playButtonContainer);
+const gameOverText = new Text("Game Over", new TextStyle({
+    fontFamily: "Arial",
+    fontSize: 48,
+    fill: "red",
+    stroke: "black",
+    strokeThickness: 6,
+}));
+gameOverText.x = app.screen.width / 2 - gameOverText.width / 2;
+gameOverText.y = app.screen.height / 2 - gameOverText.height / 2;
+gameOverText.visible = false;
+uiContainer.addChild(gameOverText);
+// "Play Again" Container
+const playAgainContainer = new Container();
+playAgainContainer.visible = false;
+uiContainer.addChild(playAgainContainer);
+const playAgainText = new Text("Play Again?", new TextStyle({
+    fontFamily: "Arial",
+    fontSize: 36,
+    fill: "white",
+    stroke: "black",
+    strokeThickness: 4,
+}));
+playAgainText.anchor.set(0.5);
+playAgainText.x = app.screen.width / 2;
+playAgainText.y = app.screen.height / 2 - 50;
+playAgainContainer.addChild(playAgainText);
+const yesButton = createButton("Yes", app.screen.width / 2 - 100, app.screen.height / 2 + 20, () => {
+    resetGame();
+    updateGameState("play");
+});
+playAgainContainer.addChild(yesButton);
+const noButton = createButton("No", app.screen.width / 2 + 20, app.screen.height / 2 + 20, () => {
+    playAgainContainer.visible = false;
+});
+playAgainContainer.addChild(noButton);
+function handleEnterKey() {
+    if (gameState === "start") {
+        updateGameState("play");
+    }
+    else if (gameState === "play") {
+        updateGameState("pause");
+    }
+    else if (gameState === "pause") {
+        updateGameState("play");
+    }
+    else if (gameState === "gameOver") {
+    }
+}
 
 })();
 
