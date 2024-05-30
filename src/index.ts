@@ -96,6 +96,25 @@ const deceleration = 0.1;
 let velocity = { x: 0, y: 0 };
 let targetRotation = 0;
 
+const appWidth = app.screen.width;
+const appHeight = app.screen.height;
+
+// Update player position within the screen boundaries
+function updatePlayerPosition() {
+  if (player.x < player.width / 2) {
+    player.x = player.width / 2;
+  } else if (player.x > appWidth - player.width / 2) {
+    player.x = appWidth - player.width / 2;
+  }
+
+  if (player.y < player.height / 2) {
+    player.y = player.height / 2;
+  } else if (player.y > appHeight - player.height / 2) {
+    player.y = appHeight - player.height / 2;
+  }
+}
+
+
 // Initial obstacle speed
 let obstacleSpeed = maxSpeed / 2;
 
@@ -228,6 +247,11 @@ function resetGame() {
 
 app.ticker.add(() => {
   if (gameState === "play") {
+    player.x += velocity.x;
+    player.y += velocity.y;
+    
+    // Ensure the player stays within the boundaries
+    updatePlayerPosition();
     score += 0.1;
     scoreText.text = `Score: ${Math.round(score)}`;
 
