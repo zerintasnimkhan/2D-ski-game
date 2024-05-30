@@ -12,6 +12,7 @@ import {
   JoystickChangeEvent,
 } from "./control/joystick";
 
+
 const app = new Application<HTMLCanvasElement>({
   view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
   resolution: window.devicePixelRatio || 1,
@@ -21,7 +22,35 @@ const app = new Application<HTMLCanvasElement>({
   height: window.innerHeight,
 });
 
-const player: Sprite = Sprite.from("player.png");
+const backgroundMusic = new Audio('sounds/background2.wav');
+const collectSound = new Audio('sounds/collect.wav');
+const gameOverSound = new Audio('sounds/gameover.wav');
+
+const audioContext = new AudioContext();
+const mediaElementSources = new Map<HTMLMediaElement, MediaElementAudioSourceNode>();
+
+function playAudio(audio: HTMLAudioElement) {
+  // const source = audioContext.createMediaElementSource(audio);
+  // source.connect(audioContext.destination);
+
+  if (!audio.paused) {
+    audio.pause();
+  }
+  if (mediaElementSources.has(audio)) {
+    return;
+  }
+
+  const sourceNode = audioContext.createMediaElementSource(audio);
+  sourceNode.connect(audioContext.destination);
+
+  mediaElementSources.set(audio, sourceNode);
+
+  audio.play();
+}
+
+playAudio(backgroundMusic);
+
+const player: Sprite = Sprite.from("images/player.png");
 
 player.anchor.set(0.5);
 player.x = app.screen.width / 2;
@@ -35,7 +64,7 @@ type KeyState = {
   ArrowDown: boolean;
   ArrowLeft: boolean;
   ArrowRight: boolean;
-  Enter: boolean; // Added Enter key state
+  Enter: boolean; 
 };
 
 const keys: KeyState = {
@@ -43,7 +72,7 @@ const keys: KeyState = {
   ArrowDown: false,
   ArrowLeft: false,
   ArrowRight: false,
-  Enter: false, // Initialize Enter key state
+  Enter: false, 
 };
 
 window.addEventListener("keydown", (event) => {
@@ -90,21 +119,21 @@ function lerp(start: number, end: number, t: number): number {
 }
 
 const obstacleTextures = [
-  "tree.png",
-  "burg.png",
-  "ice.png",
-  "brunch.png",
-  "burg.png",
+  "images/tree.png",
+  "images/burg.png",
+  "images/ice.png",
+  "images/brunch.png",
+  "images/burg.png",
 ];
 const obstacles: Sprite[] = [];
 const obstacleCount = 10;
 
 const collectibleTextures = [
-  "star.png",
-  "coin.png",
-  "gem.png",
-  "gemBlue.png",
-  "gemRed.png",
+  "images/star.png",
+  "images/coin.png",
+  "images/gem.png",
+  "images/gemBlue.png",
+  "images/gemRed.png",
 ];
 const collectibles: Sprite[] = [];
 const collectibleCount = 5;
@@ -260,6 +289,7 @@ app.ticker.add(() => {
       // Check for collision with player
       if (isColliding(player, obstacle)) {
         console.log("Collision detected!");
+        playAudio(collectSound);
         // Handle collision (reduce speed and mark red)
         velocity.x *= 0.5;
         velocity.y *= 0.5;
@@ -295,6 +325,7 @@ app.ticker.add(() => {
 
     if (score < 0) {
       updateGameState("gameOver");
+      playAudio(gameOverSound);
     }
   }
 });
@@ -403,7 +434,7 @@ function createButton(
   button.addChild(buttonBackground);
   button.addChild(buttonText);
 
-  buttonBackground.interactive = true;
+  buttonBackground.eventMode = 'dynamic';
   buttonBackground.on("pointerdown", onClick);
 
   button.x = x;
@@ -412,6 +443,7 @@ function createButton(
   return button;
 }
 
+
 const startButtonContainer = createButton(
   "Start",
   app.screen.width / 2 - 60,
@@ -419,6 +451,9 @@ const startButtonContainer = createButton(
   () => updateGameState("play")
 );
 uiContainer.addChild(startButtonContainer);
+startButtonContainer.addEventListener("click", () => {
+  playAudio(backgroundMusic);
+});
 
 const pauseButtonContainer = createButton(
   "Pause",
@@ -485,7 +520,7 @@ playAgainContainer.addChild(yesButton);
 
 const noButton = createButton(
   "No",
-  app.screen.width / 2 + 20,
+  app.screen.width / 2 + 32,
   app.screen.height / 2 + 20,
   () => {
     playAgainContainer.visible = false;
