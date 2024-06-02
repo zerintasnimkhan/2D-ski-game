@@ -35,16 +35,16 @@ export class Joystick extends Container {
 
     if (!this.settings.outer) {
       const outer = new Graphics();
-      outer.beginFill(0x000000);
-      outer.drawCircle(0, 0, 60);
+      outer.beginFill(0x0000FF, 0.2);
+      outer.drawCircle(0, 0, 100); 
       outer.alpha = 0.5;
       this.settings.outer = outer;
     }
 
     if (!this.settings.inner) {
       const inner = new Graphics();
-      inner.beginFill(0x000000);
-      inner.drawCircle(0, 0, 35);
+      inner.beginFill(0x0000FF, 0.5); 
+      inner.drawCircle(0, 0, 60); 
       inner.alpha = this.innerAlphaStandby;
       this.settings.inner = inner;
     }
@@ -92,7 +92,7 @@ export class Joystick extends Container {
 
     function onDragStart(event: FederatedPointerEvent) {
       startPosition = event.getLocalPosition(that);
-      //startPosition = new Point(0, 0);
+      startPosition = new Point(0, 0);
       dragging = true;
       that.inner.alpha = 1;
       that.settings.onStart?.();

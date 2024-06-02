@@ -45,7 +45,10 @@ function playAudio(audio: HTMLAudioElement) {
 
   mediaElementSources.set(audio, sourceNode);
 
-  audio.play();
+  audio.play().catch(error => {
+    console.error("Audio playback failed:", error);
+  });
+  
 }
 
 playAudio(backgroundMusic);
@@ -113,7 +116,6 @@ function updatePlayerPosition() {
     player.y = appHeight - player.height / 2;
   }
 }
-
 
 // Initial obstacle speed
 let obstacleSpeed = maxSpeed / 2;
@@ -217,6 +219,7 @@ function updateGameState(newState: "start" | "pause" | "play" | "gameOver") {
   }
 
   startButtonContainer.visible = newState === "start";
+  //startButtonContainer.onclick = newState === "";
   playButtonContainer.visible = newState === "pause";
   pauseButtonContainer.visible = newState === "play";
   gameOverText.visible = newState === "gameOver";
@@ -422,11 +425,15 @@ const joystickSettings: JoystickSettings = {
 };
 
 const joystick = new Joystick(joystickSettings);
-joystick.position.set(
-  joystick.width / 2 + 20,
-  app.screen.height - joystick.height / 2 - 20
-);
+joystick.x = app.screen.width - joystick.width / 2 - 80;
+joystick.y = app.screen.height - joystick.height / 2 - 50; 
 app.stage.addChild(joystick);
+
+window.addEventListener("resize", () => {
+  app.renderer.resize(window.innerWidth, window.innerHeight);
+  joystick.x = app.screen.width - joystick.width / 2 - 10;
+  joystick.y = app.screen.height - joystick.height / 2 - 10;
+});
 
 const uiContainer = new Container();
 app.stage.addChild(uiContainer);
@@ -476,7 +483,11 @@ const startButtonContainer = createButton(
 );
 uiContainer.addChild(startButtonContainer);
 startButtonContainer.addEventListener("click", () => {
-  playAudio(backgroundMusic);
+  audioContext.resume().then(() => {
+    playAudio(backgroundMusic);
+  });
+
+  
 });
 
 const pauseButtonContainer = createButton(
