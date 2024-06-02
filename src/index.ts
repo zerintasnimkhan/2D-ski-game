@@ -22,9 +22,11 @@ const app = new Application<HTMLCanvasElement>({
   height: window.innerHeight,
 });
 
-const backgroundMusic = new Audio('sounds/background2.wav');
+const backgroundMusic = new Audio('sounds/background1.wav');
 const collectSound = new Audio('sounds/collect.wav');
 const gameOverSound = new Audio('sounds/gameover.wav');
+
+backgroundMusic.loop = true;
 
 const audioContext = new AudioContext();
 const mediaElementSources = new Map<HTMLMediaElement, MediaElementAudioSourceNode>();
@@ -125,7 +127,7 @@ let score = 0;
 const scoreText = new Text(
   `Score: ${score}`,
   new TextStyle({
-    fontFamily: "Arial",
+    fontFamily: "diloworld",
     fontSize: 24,
     fill: "white",
   })
@@ -439,8 +441,8 @@ const uiContainer = new Container();
 app.stage.addChild(uiContainer);
 
 const buttonStyle = new TextStyle({
-  fontFamily: "Arial",
-  fontSize: 24,
+  fontFamily: "diloworld",
+  fontSize: 40,
   fill: "white",
   stroke: "black",
   strokeThickness: 4,
@@ -486,12 +488,10 @@ startButtonContainer.addEventListener("click", () => {
   audioContext.resume().then(() => {
     playAudio(backgroundMusic);
   });
-
-  
 });
 
 const pauseButtonContainer = createButton(
-  "Pause",
+  "Pause",  
   app.screen.width - 140,
   20,
   () => updateGameState("pause")
@@ -511,15 +511,15 @@ uiContainer.addChild(playButtonContainer);
 const gameOverText = new Text(
   "Game Over",
   new TextStyle({
-    fontFamily: "Arial",
-    fontSize: 48,
+    fontFamily: "diloworld",
+    fontSize: 100,
     fill: "red",
     stroke: "black",
     strokeThickness: 6,
   })
 );
-gameOverText.x = app.screen.width / 2 - gameOverText.width / 2;
-gameOverText.y = app.screen.height / 2 - gameOverText.height / 2;
+gameOverText.x = app.screen.width / 2 - gameOverText.width / 2 + 20;
+gameOverText.y = app.screen.height / 2 - gameOverText.height;
 gameOverText.visible = false;
 uiContainer.addChild(gameOverText);
 
@@ -530,22 +530,22 @@ uiContainer.addChild(playAgainContainer);
 const playAgainText = new Text(
   "Play Again?",
   new TextStyle({
-    fontFamily: "Arial",
-    fontSize: 36,
+    fontFamily: "diloworld",
+    fontSize: 50,
     fill: "white",
     stroke: "black",
     strokeThickness: 4,
   })
 );
 playAgainText.anchor.set(0.5);
-playAgainText.x = app.screen.width / 2;
-playAgainText.y = app.screen.height / 2 - 50;
+playAgainText.x = app.screen.width / 2 + 30;
+playAgainText.y = app.screen.height / 2 + 50;
 playAgainContainer.addChild(playAgainText);
 
 const yesButton = createButton(
   "Yes",
   app.screen.width / 2 - 100,
-  app.screen.height / 2 + 20,
+  app.screen.height / 2 + 90,
   () => {
     resetGame();
     updateGameState("play");
@@ -556,7 +556,7 @@ playAgainContainer.addChild(yesButton);
 const noButton = createButton(
   "No",
   app.screen.width / 2 + 32,
-  app.screen.height / 2 + 20,
+  app.screen.height / 2 + 90,
   () => {
     playAgainContainer.visible = false;
   }
