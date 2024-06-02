@@ -29804,15 +29804,15 @@ class Joystick extends Container {
         this.height = settings.height;
         if (!this.settings.outer) {
             const outer = new Graphics();
-            outer.beginFill(0x000000);
-            outer.drawCircle(0, 0, 60);
+            outer.beginFill(0x0000FF, 0.2);
+            outer.drawCircle(0, 0, 100);
             outer.alpha = 0.5;
             this.settings.outer = outer;
         }
         if (!this.settings.inner) {
             const inner = new Graphics();
-            inner.beginFill(0x000000);
-            inner.drawCircle(0, 0, 35);
+            inner.beginFill(0x0000FF, 0.5);
+            inner.drawCircle(0, 0, 60);
             inner.alpha = this.innerAlphaStandby;
             this.settings.inner = inner;
         }
@@ -29845,7 +29845,7 @@ class Joystick extends Container {
         function onDragStart(event) {
             var _a, _b;
             startPosition = event.getLocalPosition(that);
-            //startPosition = new Point(0, 0);
+            startPosition = new Point(0, 0);
             dragging = true;
             that.inner.alpha = 1;
             (_b = (_a = that.settings).onStart) === null || _b === void 0 ? void 0 : _b.call(_a);
@@ -29971,7 +29971,9 @@ function playAudio(audio) {
     const sourceNode = audioContext.createMediaElementSource(audio);
     sourceNode.connect(audioContext.destination);
     mediaElementSources.set(audio, sourceNode);
-    audio.play();
+    audio.play().catch(error => {
+        console.error("Audio playback failed:", error);
+    });
 }
 playAudio(backgroundMusic);
 const player = Sprite.from("images/player.png");
@@ -30104,6 +30106,7 @@ function updateGameState(newState) {
         player.tint = 0xffffff; // Reset player color
     }
     startButtonContainer.visible = newState === "start";
+    //startButtonContainer.onclick = newState === "";
     playButtonContainer.visible = newState === "pause";
     pauseButtonContainer.visible = newState === "play";
     gameOverText.visible = newState === "gameOver";
@@ -30287,8 +30290,14 @@ const joystickSettings = {
     },
 };
 const joystick = new Joystick(joystickSettings);
-joystick.position.set(joystick.width / 2 + 20, app.screen.height - joystick.height / 2 - 20);
+joystick.x = app.screen.width - joystick.width / 2 - 80;
+joystick.y = app.screen.height - joystick.height / 2 - 50;
 app.stage.addChild(joystick);
+window.addEventListener("resize", () => {
+    app.renderer.resize(window.innerWidth, window.innerHeight);
+    joystick.x = app.screen.width - joystick.width / 2 - 10;
+    joystick.y = app.screen.height - joystick.height / 2 - 10;
+});
 const uiContainer = new Container();
 app.stage.addChild(uiContainer);
 const buttonStyle = new TextStyle({
@@ -30319,7 +30328,9 @@ function createButton(text, x, y, onClick) {
 const startButtonContainer = createButton("Start", app.screen.width / 2 - 60, app.screen.height / 2 - 25, () => updateGameState("play"));
 uiContainer.addChild(startButtonContainer);
 startButtonContainer.addEventListener("click", () => {
-    playAudio(backgroundMusic);
+    audioContext.resume().then(() => {
+        playAudio(backgroundMusic);
+    });
 });
 const pauseButtonContainer = createButton("Pause", app.screen.width - 140, 20, () => updateGameState("pause"));
 pauseButtonContainer.visible = false;
