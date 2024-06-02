@@ -4980,12 +4980,12 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/constants/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/constants/lib/index.mjs
 var ENV = /* @__PURE__ */ ((ENV2) => (ENV2[ENV2.WEBGL_LEGACY = 0] = "WEBGL_LEGACY", ENV2[ENV2.WEBGL = 1] = "WEBGL", ENV2[ENV2.WEBGL2 = 2] = "WEBGL2", ENV2))(ENV || {}), RENDERER_TYPE = /* @__PURE__ */ ((RENDERER_TYPE2) => (RENDERER_TYPE2[RENDERER_TYPE2.UNKNOWN = 0] = "UNKNOWN", RENDERER_TYPE2[RENDERER_TYPE2.WEBGL = 1] = "WEBGL", RENDERER_TYPE2[RENDERER_TYPE2.CANVAS = 2] = "CANVAS", RENDERER_TYPE2))(RENDERER_TYPE || {}), BUFFER_BITS = /* @__PURE__ */ ((BUFFER_BITS2) => (BUFFER_BITS2[BUFFER_BITS2.COLOR = 16384] = "COLOR", BUFFER_BITS2[BUFFER_BITS2.DEPTH = 256] = "DEPTH", BUFFER_BITS2[BUFFER_BITS2.STENCIL = 1024] = "STENCIL", BUFFER_BITS2))(BUFFER_BITS || {}), BLEND_MODES = /* @__PURE__ */ ((BLEND_MODES2) => (BLEND_MODES2[BLEND_MODES2.NORMAL = 0] = "NORMAL", BLEND_MODES2[BLEND_MODES2.ADD = 1] = "ADD", BLEND_MODES2[BLEND_MODES2.MULTIPLY = 2] = "MULTIPLY", BLEND_MODES2[BLEND_MODES2.SCREEN = 3] = "SCREEN", BLEND_MODES2[BLEND_MODES2.OVERLAY = 4] = "OVERLAY", BLEND_MODES2[BLEND_MODES2.DARKEN = 5] = "DARKEN", BLEND_MODES2[BLEND_MODES2.LIGHTEN = 6] = "LIGHTEN", BLEND_MODES2[BLEND_MODES2.COLOR_DODGE = 7] = "COLOR_DODGE", BLEND_MODES2[BLEND_MODES2.COLOR_BURN = 8] = "COLOR_BURN", BLEND_MODES2[BLEND_MODES2.HARD_LIGHT = 9] = "HARD_LIGHT", BLEND_MODES2[BLEND_MODES2.SOFT_LIGHT = 10] = "SOFT_LIGHT", BLEND_MODES2[BLEND_MODES2.DIFFERENCE = 11] = "DIFFERENCE", BLEND_MODES2[BLEND_MODES2.EXCLUSION = 12] = "EXCLUSION", BLEND_MODES2[BLEND_MODES2.HUE = 13] = "HUE", BLEND_MODES2[BLEND_MODES2.SATURATION = 14] = "SATURATION", BLEND_MODES2[BLEND_MODES2.COLOR = 15] = "COLOR", BLEND_MODES2[BLEND_MODES2.LUMINOSITY = 16] = "LUMINOSITY", BLEND_MODES2[BLEND_MODES2.NORMAL_NPM = 17] = "NORMAL_NPM", BLEND_MODES2[BLEND_MODES2.ADD_NPM = 18] = "ADD_NPM", BLEND_MODES2[BLEND_MODES2.SCREEN_NPM = 19] = "SCREEN_NPM", BLEND_MODES2[BLEND_MODES2.NONE = 20] = "NONE", BLEND_MODES2[BLEND_MODES2.SRC_OVER = 0] = "SRC_OVER", BLEND_MODES2[BLEND_MODES2.SRC_IN = 21] = "SRC_IN", BLEND_MODES2[BLEND_MODES2.SRC_OUT = 22] = "SRC_OUT", BLEND_MODES2[BLEND_MODES2.SRC_ATOP = 23] = "SRC_ATOP", BLEND_MODES2[BLEND_MODES2.DST_OVER = 24] = "DST_OVER", BLEND_MODES2[BLEND_MODES2.DST_IN = 25] = "DST_IN", BLEND_MODES2[BLEND_MODES2.DST_OUT = 26] = "DST_OUT", BLEND_MODES2[BLEND_MODES2.DST_ATOP = 27] = "DST_ATOP", BLEND_MODES2[BLEND_MODES2.ERASE = 26] = "ERASE", BLEND_MODES2[BLEND_MODES2.SUBTRACT = 28] = "SUBTRACT", BLEND_MODES2[BLEND_MODES2.XOR = 29] = "XOR", BLEND_MODES2))(BLEND_MODES || {}), DRAW_MODES = /* @__PURE__ */ ((DRAW_MODES2) => (DRAW_MODES2[DRAW_MODES2.POINTS = 0] = "POINTS", DRAW_MODES2[DRAW_MODES2.LINES = 1] = "LINES", DRAW_MODES2[DRAW_MODES2.LINE_LOOP = 2] = "LINE_LOOP", DRAW_MODES2[DRAW_MODES2.LINE_STRIP = 3] = "LINE_STRIP", DRAW_MODES2[DRAW_MODES2.TRIANGLES = 4] = "TRIANGLES", DRAW_MODES2[DRAW_MODES2.TRIANGLE_STRIP = 5] = "TRIANGLE_STRIP", DRAW_MODES2[DRAW_MODES2.TRIANGLE_FAN = 6] = "TRIANGLE_FAN", DRAW_MODES2))(DRAW_MODES || {}), FORMATS = /* @__PURE__ */ ((FORMATS2) => (FORMATS2[FORMATS2.RGBA = 6408] = "RGBA", FORMATS2[FORMATS2.RGB = 6407] = "RGB", FORMATS2[FORMATS2.RG = 33319] = "RG", FORMATS2[FORMATS2.RED = 6403] = "RED", FORMATS2[FORMATS2.RGBA_INTEGER = 36249] = "RGBA_INTEGER", FORMATS2[FORMATS2.RGB_INTEGER = 36248] = "RGB_INTEGER", FORMATS2[FORMATS2.RG_INTEGER = 33320] = "RG_INTEGER", FORMATS2[FORMATS2.RED_INTEGER = 36244] = "RED_INTEGER", FORMATS2[FORMATS2.ALPHA = 6406] = "ALPHA", FORMATS2[FORMATS2.LUMINANCE = 6409] = "LUMINANCE", FORMATS2[FORMATS2.LUMINANCE_ALPHA = 6410] = "LUMINANCE_ALPHA", FORMATS2[FORMATS2.DEPTH_COMPONENT = 6402] = "DEPTH_COMPONENT", FORMATS2[FORMATS2.DEPTH_STENCIL = 34041] = "DEPTH_STENCIL", FORMATS2))(FORMATS || {}), TARGETS = /* @__PURE__ */ ((TARGETS2) => (TARGETS2[TARGETS2.TEXTURE_2D = 3553] = "TEXTURE_2D", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP = 34067] = "TEXTURE_CUBE_MAP", TARGETS2[TARGETS2.TEXTURE_2D_ARRAY = 35866] = "TEXTURE_2D_ARRAY", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP_POSITIVE_X = 34069] = "TEXTURE_CUBE_MAP_POSITIVE_X", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP_NEGATIVE_X = 34070] = "TEXTURE_CUBE_MAP_NEGATIVE_X", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP_POSITIVE_Y = 34071] = "TEXTURE_CUBE_MAP_POSITIVE_Y", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP_NEGATIVE_Y = 34072] = "TEXTURE_CUBE_MAP_NEGATIVE_Y", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP_POSITIVE_Z = 34073] = "TEXTURE_CUBE_MAP_POSITIVE_Z", TARGETS2[TARGETS2.TEXTURE_CUBE_MAP_NEGATIVE_Z = 34074] = "TEXTURE_CUBE_MAP_NEGATIVE_Z", TARGETS2))(TARGETS || {}), TYPES = /* @__PURE__ */ ((TYPES2) => (TYPES2[TYPES2.UNSIGNED_BYTE = 5121] = "UNSIGNED_BYTE", TYPES2[TYPES2.UNSIGNED_SHORT = 5123] = "UNSIGNED_SHORT", TYPES2[TYPES2.UNSIGNED_SHORT_5_6_5 = 33635] = "UNSIGNED_SHORT_5_6_5", TYPES2[TYPES2.UNSIGNED_SHORT_4_4_4_4 = 32819] = "UNSIGNED_SHORT_4_4_4_4", TYPES2[TYPES2.UNSIGNED_SHORT_5_5_5_1 = 32820] = "UNSIGNED_SHORT_5_5_5_1", TYPES2[TYPES2.UNSIGNED_INT = 5125] = "UNSIGNED_INT", TYPES2[TYPES2.UNSIGNED_INT_10F_11F_11F_REV = 35899] = "UNSIGNED_INT_10F_11F_11F_REV", TYPES2[TYPES2.UNSIGNED_INT_2_10_10_10_REV = 33640] = "UNSIGNED_INT_2_10_10_10_REV", TYPES2[TYPES2.UNSIGNED_INT_24_8 = 34042] = "UNSIGNED_INT_24_8", TYPES2[TYPES2.UNSIGNED_INT_5_9_9_9_REV = 35902] = "UNSIGNED_INT_5_9_9_9_REV", TYPES2[TYPES2.BYTE = 5120] = "BYTE", TYPES2[TYPES2.SHORT = 5122] = "SHORT", TYPES2[TYPES2.INT = 5124] = "INT", TYPES2[TYPES2.FLOAT = 5126] = "FLOAT", TYPES2[TYPES2.FLOAT_32_UNSIGNED_INT_24_8_REV = 36269] = "FLOAT_32_UNSIGNED_INT_24_8_REV", TYPES2[TYPES2.HALF_FLOAT = 36193] = "HALF_FLOAT", TYPES2))(TYPES || {}), SAMPLER_TYPES = /* @__PURE__ */ ((SAMPLER_TYPES2) => (SAMPLER_TYPES2[SAMPLER_TYPES2.FLOAT = 0] = "FLOAT", SAMPLER_TYPES2[SAMPLER_TYPES2.INT = 1] = "INT", SAMPLER_TYPES2[SAMPLER_TYPES2.UINT = 2] = "UINT", SAMPLER_TYPES2))(SAMPLER_TYPES || {}), SCALE_MODES = /* @__PURE__ */ ((SCALE_MODES2) => (SCALE_MODES2[SCALE_MODES2.NEAREST = 0] = "NEAREST", SCALE_MODES2[SCALE_MODES2.LINEAR = 1] = "LINEAR", SCALE_MODES2))(SCALE_MODES || {}), WRAP_MODES = /* @__PURE__ */ ((WRAP_MODES2) => (WRAP_MODES2[WRAP_MODES2.CLAMP = 33071] = "CLAMP", WRAP_MODES2[WRAP_MODES2.REPEAT = 10497] = "REPEAT", WRAP_MODES2[WRAP_MODES2.MIRRORED_REPEAT = 33648] = "MIRRORED_REPEAT", WRAP_MODES2))(WRAP_MODES || {}), MIPMAP_MODES = /* @__PURE__ */ ((MIPMAP_MODES2) => (MIPMAP_MODES2[MIPMAP_MODES2.OFF = 0] = "OFF", MIPMAP_MODES2[MIPMAP_MODES2.POW2 = 1] = "POW2", MIPMAP_MODES2[MIPMAP_MODES2.ON = 2] = "ON", MIPMAP_MODES2[MIPMAP_MODES2.ON_MANUAL = 3] = "ON_MANUAL", MIPMAP_MODES2))(MIPMAP_MODES || {}), ALPHA_MODES = /* @__PURE__ */ ((ALPHA_MODES2) => (ALPHA_MODES2[ALPHA_MODES2.NPM = 0] = "NPM", ALPHA_MODES2[ALPHA_MODES2.UNPACK = 1] = "UNPACK", ALPHA_MODES2[ALPHA_MODES2.PMA = 2] = "PMA", ALPHA_MODES2[ALPHA_MODES2.NO_PREMULTIPLIED_ALPHA = 0] = "NO_PREMULTIPLIED_ALPHA", ALPHA_MODES2[ALPHA_MODES2.PREMULTIPLY_ON_UPLOAD = 1] = "PREMULTIPLY_ON_UPLOAD", ALPHA_MODES2[ALPHA_MODES2.PREMULTIPLIED_ALPHA = 2] = "PREMULTIPLIED_ALPHA", ALPHA_MODES2))(ALPHA_MODES || {}), CLEAR_MODES = /* @__PURE__ */ ((CLEAR_MODES2) => (CLEAR_MODES2[CLEAR_MODES2.NO = 0] = "NO", CLEAR_MODES2[CLEAR_MODES2.YES = 1] = "YES", CLEAR_MODES2[CLEAR_MODES2.AUTO = 2] = "AUTO", CLEAR_MODES2[CLEAR_MODES2.BLEND = 0] = "BLEND", CLEAR_MODES2[CLEAR_MODES2.CLEAR = 1] = "CLEAR", CLEAR_MODES2[CLEAR_MODES2.BLIT = 2] = "BLIT", CLEAR_MODES2))(CLEAR_MODES || {}), GC_MODES = /* @__PURE__ */ ((GC_MODES2) => (GC_MODES2[GC_MODES2.AUTO = 0] = "AUTO", GC_MODES2[GC_MODES2.MANUAL = 1] = "MANUAL", GC_MODES2))(GC_MODES || {}), PRECISION = /* @__PURE__ */ ((PRECISION2) => (PRECISION2.LOW = "lowp", PRECISION2.MEDIUM = "mediump", PRECISION2.HIGH = "highp", PRECISION2))(PRECISION || {}), MASK_TYPES = /* @__PURE__ */ ((MASK_TYPES2) => (MASK_TYPES2[MASK_TYPES2.NONE = 0] = "NONE", MASK_TYPES2[MASK_TYPES2.SCISSOR = 1] = "SCISSOR", MASK_TYPES2[MASK_TYPES2.STENCIL = 2] = "STENCIL", MASK_TYPES2[MASK_TYPES2.SPRITE = 3] = "SPRITE", MASK_TYPES2[MASK_TYPES2.COLOR = 4] = "COLOR", MASK_TYPES2))(MASK_TYPES || {}), COLOR_MASK_BITS = /* @__PURE__ */ ((COLOR_MASK_BITS2) => (COLOR_MASK_BITS2[COLOR_MASK_BITS2.RED = 1] = "RED", COLOR_MASK_BITS2[COLOR_MASK_BITS2.GREEN = 2] = "GREEN", COLOR_MASK_BITS2[COLOR_MASK_BITS2.BLUE = 4] = "BLUE", COLOR_MASK_BITS2[COLOR_MASK_BITS2.ALPHA = 8] = "ALPHA", COLOR_MASK_BITS2))(COLOR_MASK_BITS || {}), MSAA_QUALITY = /* @__PURE__ */ ((MSAA_QUALITY2) => (MSAA_QUALITY2[MSAA_QUALITY2.NONE = 0] = "NONE", MSAA_QUALITY2[MSAA_QUALITY2.LOW = 2] = "LOW", MSAA_QUALITY2[MSAA_QUALITY2.MEDIUM = 4] = "MEDIUM", MSAA_QUALITY2[MSAA_QUALITY2.HIGH = 8] = "HIGH", MSAA_QUALITY2))(MSAA_QUALITY || {}), BUFFER_TYPE = /* @__PURE__ */ ((BUFFER_TYPE2) => (BUFFER_TYPE2[BUFFER_TYPE2.ELEMENT_ARRAY_BUFFER = 34963] = "ELEMENT_ARRAY_BUFFER", BUFFER_TYPE2[BUFFER_TYPE2.ARRAY_BUFFER = 34962] = "ARRAY_BUFFER", BUFFER_TYPE2[BUFFER_TYPE2.UNIFORM_BUFFER = 35345] = "UNIFORM_BUFFER", BUFFER_TYPE2))(BUFFER_TYPE || {});
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/settings/lib/adapter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/settings/lib/adapter.mjs
 const BrowserAdapter = {
   /**
    * Creates a canvas element of the given size.
@@ -5008,7 +5008,7 @@ const BrowserAdapter = {
 
 //# sourceMappingURL=adapter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/settings/lib/settings.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/settings/lib/settings.mjs
 
 const settings = {
   /**
@@ -5182,13 +5182,13 @@ function isMobile(param) {
     return result;
 }
 //# sourceMappingURL=isMobile.js.map
-;// CONCATENATED MODULE: ./node_modules/@pixi/settings/lib/utils/isMobile.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/settings/lib/utils/isMobile.mjs
 
 const isMobileCall = isMobile["default"] ?? isMobile, isMobile_isMobile = isMobileCall(globalThis.navigator);
 
 //# sourceMappingURL=isMobile.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/settings/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/settings/lib/index.mjs
 
 
 
@@ -5197,7 +5197,7 @@ const isMobileCall = isMobile["default"] ?? isMobile, isMobile_isMobile = isMobi
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/settings.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/settings.mjs
 
 
 settings.RETINA_PREFIX = /@([0-9\.]+)x/;
@@ -5211,7 +5211,7 @@ var eventemitter3 = __webpack_require__(228);
 var earcut = __webpack_require__(570);
 // EXTERNAL MODULE: ./node_modules/url/url.js
 var url = __webpack_require__(835);
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/logging/deprecation.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/logging/deprecation.mjs
 const warnings = {};
 function deprecation(version, message, ignoreDepth = 3) {
   if (warnings[message])
@@ -5232,7 +5232,7 @@ Deprecated since v${version}`), console.warn(stack))), warnings[message] = !0;
 
 //# sourceMappingURL=deprecation.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/url.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/url.mjs
 
 
 const url_url = {
@@ -5258,7 +5258,7 @@ const url_url = {
 
 //# sourceMappingURL=url.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/path.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/path.mjs
 
 function assertPath(path2) {
   if (typeof path2 != "string")
@@ -5543,7 +5543,7 @@ const path = {
 
 //# sourceMappingURL=path.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/browser/detectVideoAlphaMode.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/browser/detectVideoAlphaMode.mjs
 
 let promise;
 async function detectVideoAlphaMode() {
@@ -5574,7 +5574,7 @@ async function detectVideoAlphaMode() {
 
 //# sourceMappingURL=detectVideoAlphaMode.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/browser/hello.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/browser/hello.mjs
 
 function skipHello() {
   deprecation("7.0.0", "skipHello is deprecated, please use settings.RENDER_OPTIONS.hello");
@@ -5585,7 +5585,7 @@ function sayHello() {
 
 //# sourceMappingURL=hello.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/browser/isWebGLSupported.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/browser/isWebGLSupported.mjs
 
 
 let supported;
@@ -5900,7 +5900,7 @@ let Color = _Color;
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/color/hex.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/color/hex.mjs
 
 
 function hex2rgb(hex, out = []) {
@@ -5918,7 +5918,7 @@ function rgb2hex(rgb) {
 
 //# sourceMappingURL=hex.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/color/premultiply.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/color/premultiply.mjs
 
 
 
@@ -5946,12 +5946,12 @@ function premultiplyTintToRgba(tint, alpha, out, premultiply = !0) {
 
 //# sourceMappingURL=premultiply.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/const.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/const.mjs
 const DATA_URI = /^\s*data:(?:([\w-]+)\/([\w+.-]+))?(?:;charset=([\w-]+))?(?:;(base64))?,(.*)/i;
 
 //# sourceMappingURL=const.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/createIndicesForQuads.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/createIndicesForQuads.mjs
 function createIndicesForQuads(size, outBuffer = null) {
   const totalIndices = size * 6;
   if (outBuffer = outBuffer || new Uint16Array(totalIndices), outBuffer.length !== totalIndices)
@@ -5963,7 +5963,7 @@ function createIndicesForQuads(size, outBuffer = null) {
 
 //# sourceMappingURL=createIndicesForQuads.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/getBufferType.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/getBufferType.mjs
 function getBufferType(array) {
   if (array.BYTES_PER_ELEMENT === 4)
     return array instanceof Float32Array ? "Float32Array" : array instanceof Uint32Array ? "Uint32Array" : "Int32Array";
@@ -5977,7 +5977,7 @@ function getBufferType(array) {
 
 //# sourceMappingURL=getBufferType.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/interleaveTypedArrays.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/interleaveTypedArrays.mjs
 
 const map = { Float32Array, Uint32Array, Int32Array, Uint8Array };
 function interleaveTypedArrays(arrays, sizes) {
@@ -6001,7 +6001,7 @@ function interleaveTypedArrays(arrays, sizes) {
 
 //# sourceMappingURL=interleaveTypedArrays.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/pow2.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/pow2.mjs
 function nextPow2(v) {
   return v += v === 0 ? 1 : 0, --v, v |= v >>> 1, v |= v >>> 2, v |= v >>> 4, v |= v >>> 8, v |= v >>> 16, v + 1;
 }
@@ -6017,7 +6017,7 @@ function log2(v) {
 
 //# sourceMappingURL=pow2.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/removeItems.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/removeItems.mjs
 function removeItems(arr, startIdx, removeCount) {
   const length = arr.length;
   let i;
@@ -6032,14 +6032,14 @@ function removeItems(arr, startIdx, removeCount) {
 
 //# sourceMappingURL=removeItems.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/sign.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/sign.mjs
 function sign(n) {
   return n === 0 ? 0 : n < 0 ? -1 : 1;
 }
 
 //# sourceMappingURL=sign.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/data/uid.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/data/uid.mjs
 let nextUid = 0;
 function uid() {
   return ++nextUid;
@@ -6047,7 +6047,7 @@ function uid() {
 
 //# sourceMappingURL=uid.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/media/BoundingBox.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/media/BoundingBox.mjs
 const _BoundingBox = class {
   /**
    * @param left - The left coordinate value of the bounding box.
@@ -6076,7 +6076,7 @@ let BoundingBox = _BoundingBox;
 
 //# sourceMappingURL=BoundingBox.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/media/caches.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/media/caches.mjs
 const ProgramCache = {}, TextureCache = /* @__PURE__ */ Object.create(null), BaseTextureCache = /* @__PURE__ */ Object.create(null);
 function destroyTextureCache() {
   let key;
@@ -6095,7 +6095,7 @@ function clearTextureCache() {
 
 //# sourceMappingURL=caches.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/media/CanvasRenderTarget.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/media/CanvasRenderTarget.mjs
 
 class CanvasRenderTarget {
   /**
@@ -6161,7 +6161,7 @@ class CanvasRenderTarget {
 
 //# sourceMappingURL=CanvasRenderTarget.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/media/getCanvasBoundingBox.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/media/getCanvasBoundingBox.mjs
 
 function checkRow(data, width, y) {
   for (let x = 0, index = 4 * y * width; x < width; ++x, index += 4)
@@ -6199,7 +6199,7 @@ function getCanvasBoundingBox(canvas) {
 
 //# sourceMappingURL=getCanvasBoundingBox.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/media/trimCanvas.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/media/trimCanvas.mjs
 
 function trimCanvas(canvas) {
   const boundingBox = getCanvasBoundingBox(canvas), { width, height } = boundingBox;
@@ -6220,7 +6220,7 @@ function trimCanvas(canvas) {
 
 //# sourceMappingURL=trimCanvas.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/network/decomposeDataUri.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/network/decomposeDataUri.mjs
 
 function decomposeDataUri(dataUri) {
   const dataUriMatch = DATA_URI.exec(dataUri);
@@ -6236,7 +6236,7 @@ function decomposeDataUri(dataUri) {
 
 //# sourceMappingURL=decomposeDataUri.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/network/determineCrossOrigin.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/network/determineCrossOrigin.mjs
 function determineCrossOrigin(url, loc = globalThis.location) {
   if (url.startsWith("data:"))
     return "";
@@ -6247,7 +6247,7 @@ function determineCrossOrigin(url, loc = globalThis.location) {
 
 //# sourceMappingURL=determineCrossOrigin.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/network/getResolutionOfUrl.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/network/getResolutionOfUrl.mjs
 
 
 function getResolutionOfUrl(url, defaultValue = 1) {
@@ -6257,7 +6257,7 @@ function getResolutionOfUrl(url, defaultValue = 1) {
 
 //# sourceMappingURL=getResolutionOfUrl.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/utils/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/utils/lib/index.mjs
 
 
 
@@ -6388,7 +6388,7 @@ const normalizeExtension = (ext) => {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/ViewableBuffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/ViewableBuffer.mjs
 class ViewableBuffer {
   constructor(sizeOrBuffer) {
     typeof sizeOrBuffer == "number" ? this.rawBinaryData = new ArrayBuffer(sizeOrBuffer) : sizeOrBuffer instanceof Uint8Array ? this.rawBinaryData = sizeOrBuffer.buffer : this.rawBinaryData = sizeOrBuffer, this.uint32View = new Uint32Array(this.rawBinaryData), this.float32View = new Float32Array(this.rawBinaryData);
@@ -6446,7 +6446,7 @@ class ViewableBuffer {
 
 //# sourceMappingURL=ViewableBuffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/checkMaxIfStatementsInShader.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/checkMaxIfStatementsInShader.mjs
 const fragTemplate = [
   "precision mediump float;",
   "void main(void){",
@@ -6479,7 +6479,7 @@ function checkMaxIfStatementsInShader(maxIfs, gl) {
 
 //# sourceMappingURL=checkMaxIfStatementsInShader.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/state/State.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/state/State.mjs
 
 const BLEND = 0, OFFSET = 1, CULLING = 2, DEPTH_TEST = 3, WINDING = 4, DEPTH_MASK = 5;
 class State {
@@ -6578,7 +6578,7 @@ State.prototype.toString = function() {
 
 //# sourceMappingURL=State.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/autoDetectResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/autoDetectResource.mjs
 const INSTALLED = [];
 function autoDetectResource(source, options) {
   if (!source)
@@ -6598,7 +6598,7 @@ function autoDetectResource(source, options) {
 
 //# sourceMappingURL=autoDetectResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/runner/lib/Runner.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/runner/lib/Runner.mjs
 class Runner_Runner {
   /**
    * @param {string} name - The function name that will be executed on the listeners added to this Runner.
@@ -6702,12 +6702,12 @@ Object.defineProperties(Runner_Runner.prototype, {
 
 //# sourceMappingURL=Runner.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/runner/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/runner/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/Resource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/Resource.mjs
 
 class Resource {
   /**
@@ -6806,7 +6806,7 @@ class Resource {
 
 //# sourceMappingURL=Resource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/BufferResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/BufferResource.mjs
 
 
 class BufferResource extends Resource {
@@ -6872,7 +6872,7 @@ class BufferResource extends Resource {
 
 //# sourceMappingURL=BufferResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/BaseTexture.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/BaseTexture.mjs
 
 
 
@@ -7189,7 +7189,7 @@ let BaseTexture = _BaseTexture;
 
 //# sourceMappingURL=BaseTexture.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/BatchDrawCall.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/BatchDrawCall.mjs
 
 class BatchDrawCall {
   constructor() {
@@ -7199,7 +7199,7 @@ class BatchDrawCall {
 
 //# sourceMappingURL=BatchDrawCall.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/Buffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/Buffer.mjs
 
 
 let UID = 0;
@@ -7254,7 +7254,7 @@ class Buffer {
 
 //# sourceMappingURL=Buffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/Attribute.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/Attribute.mjs
 
 class Attribute {
   /**
@@ -7290,7 +7290,7 @@ class Attribute {
 
 //# sourceMappingURL=Attribute.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/utils/interleaveTypedArrays.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/utils/interleaveTypedArrays.mjs
 
 const interleaveTypedArrays_map = {
   Float32Array,
@@ -7319,7 +7319,7 @@ function interleaveTypedArrays_interleaveTypedArrays(arrays, sizes) {
 
 //# sourceMappingURL=interleaveTypedArrays.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/Geometry.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/Geometry.mjs
 
 
 
@@ -7506,7 +7506,7 @@ class Geometry {
 
 //# sourceMappingURL=Geometry.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/BatchGeometry.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/BatchGeometry.mjs
 
 
 
@@ -7522,13 +7522,13 @@ class BatchGeometry extends Geometry {
 
 //# sourceMappingURL=BatchGeometry.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/const.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/const.mjs
 const PI_2 = Math.PI * 2, RAD_TO_DEG = 180 / Math.PI, DEG_TO_RAD = Math.PI / 180;
 var SHAPES = /* @__PURE__ */ ((SHAPES2) => (SHAPES2[SHAPES2.POLY = 0] = "POLY", SHAPES2[SHAPES2.RECT = 1] = "RECT", SHAPES2[SHAPES2.CIRC = 2] = "CIRC", SHAPES2[SHAPES2.ELIP = 3] = "ELIP", SHAPES2[SHAPES2.RREC = 4] = "RREC", SHAPES2))(SHAPES || {});
 
 //# sourceMappingURL=const.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/Point.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/Point.mjs
 class Point {
   /**
    * Creates a new `Point`
@@ -7586,7 +7586,7 @@ Point.prototype.toString = function() {
 
 //# sourceMappingURL=Point.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/shapes/Rectangle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/shapes/Rectangle.mjs
 
 
 const tempPoints = [new Point(), new Point(), new Point(), new Point()];
@@ -7729,7 +7729,7 @@ Rectangle.prototype.toString = function() {
 
 //# sourceMappingURL=Rectangle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/shapes/Circle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/shapes/Circle.mjs
 
 
 class Circle {
@@ -7775,7 +7775,7 @@ Circle.prototype.toString = function() {
 
 //# sourceMappingURL=Circle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/shapes/Ellipse.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/shapes/Ellipse.mjs
 
 
 class Ellipse {
@@ -7821,7 +7821,7 @@ Ellipse.prototype.toString = function() {
 
 //# sourceMappingURL=Ellipse.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/shapes/Polygon.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/shapes/Polygon.mjs
 
 class Polygon {
   /**
@@ -7871,7 +7871,7 @@ Polygon.prototype.toString = function() {
 
 //# sourceMappingURL=Polygon.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/shapes/RoundedRectangle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/shapes/RoundedRectangle.mjs
 
 class RoundedRectangle {
   /**
@@ -7918,7 +7918,7 @@ RoundedRectangle.prototype.toString = function() {
 
 //# sourceMappingURL=RoundedRectangle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/Matrix.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/Matrix.mjs
 
 
 class Matrix {
@@ -8129,7 +8129,7 @@ Matrix.prototype.toString = function() {
 
 //# sourceMappingURL=Matrix.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/groupD8.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/groupD8.mjs
 
 const ux = [1, 1, 0, -1, -1, -1, 0, 1, 1, 1, 0, -1, -1, -1, 0, 1], uy = [0, 1, 1, 1, 0, -1, -1, -1, 0, 1, 1, 1, 0, -1, -1, -1], vx = [0, -1, -1, -1, 0, 1, 1, 1, 0, 1, 1, 1, 0, -1, -1, -1], vy = [1, 1, 0, -1, -1, -1, 0, 1, -1, -1, 0, 1, 1, 1, 0, -1], rotationCayley = [], rotationMatrices = [], signum = Math.sign;
 function init() {
@@ -8329,7 +8329,7 @@ const groupD8 = {
 
 //# sourceMappingURL=groupD8.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/ObservablePoint.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/ObservablePoint.mjs
 class ObservablePoint {
   /**
    * Creates a new `ObservablePoint`
@@ -8408,7 +8408,7 @@ ObservablePoint.prototype.toString = function() {
 
 //# sourceMappingURL=ObservablePoint.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/Transform.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/Transform.mjs
 
 
 const _Transform = class {
@@ -8462,7 +8462,7 @@ Transform.prototype.toString = function() {
 
 //# sourceMappingURL=Transform.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/math/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/math/lib/index.mjs
 
 
 
@@ -8479,7 +8479,7 @@ Transform.prototype.toString = function() {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/defaultProgram.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/defaultProgram.frag.mjs
 var defaultFragment = `varying vec2 vTextureCoord;
 
 uniform sampler2D uSampler;
@@ -8490,7 +8490,7 @@ void main(void){
 
 //# sourceMappingURL=defaultProgram.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/defaultProgram.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/defaultProgram.vert.mjs
 var defaultVertex = `attribute vec2 aVertexPosition;
 attribute vec2 aTextureCoord;
 
@@ -8506,7 +8506,7 @@ void main(void){
 
 //# sourceMappingURL=defaultProgram.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/uniformParsers.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/uniformParsers.mjs
 const uniformParsers = [
   // a float cache layer
   {
@@ -8688,7 +8688,7 @@ const uniformParsers = [
 
 //# sourceMappingURL=uniformParsers.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/generateUniformsSync.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/generateUniformsSync.mjs
 
 const GLSL_TO_SINGLE_SETTERS_CACHED = {
   float: `
@@ -8913,7 +8913,7 @@ function generateUniformsSync(group, uniformData) {
 
 //# sourceMappingURL=generateUniformsSync.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/getTestContext.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/getTestContext.mjs
 
 
 const unknownContext = {};
@@ -8929,7 +8929,7 @@ function getTestContext() {
 
 //# sourceMappingURL=getTestContext.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/getMaxFragmentPrecision.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/getMaxFragmentPrecision.mjs
 
 
 let maxFragmentPrecision;
@@ -8947,7 +8947,7 @@ function getMaxFragmentPrecision() {
 
 //# sourceMappingURL=getMaxFragmentPrecision.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/mapSize.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/mapSize.mjs
 const GLSL_TO_SIZE = {
   float: 1,
   vec2: 2,
@@ -8976,7 +8976,7 @@ function mapSize(type) {
 
 //# sourceMappingURL=mapSize.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/mapType.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/mapType.mjs
 let GL_TABLE = null;
 const GL_TO_GLSL_TYPES = {
   FLOAT: "float",
@@ -9022,7 +9022,7 @@ function mapType(gl, type) {
 
 //# sourceMappingURL=mapType.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/setPrecision.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/setPrecision.mjs
 
 function setPrecision(src, requestedPrecision, maxSupportedPrecision) {
   if (src.substring(0, 9) !== "precision") {
@@ -9036,7 +9036,7 @@ ${src}`;
 
 //# sourceMappingURL=setPrecision.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/index.mjs
 
 
 
@@ -9052,7 +9052,7 @@ ${src}`;
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/Program.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/Program.mjs
 
 
 
@@ -9122,7 +9122,7 @@ let Program = _Program;
 
 //# sourceMappingURL=Program.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/UniformGroup.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/UniformGroup.mjs
 
 
 let UniformGroup_UID = 0;
@@ -9159,7 +9159,7 @@ class UniformGroup {
 
 //# sourceMappingURL=UniformGroup.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/Shader.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/Shader.mjs
 
 
 
@@ -9207,7 +9207,7 @@ class Shader {
 
 //# sourceMappingURL=Shader.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/BatchShaderGenerator.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/BatchShaderGenerator.mjs
 
 
 
@@ -9258,7 +9258,7 @@ else `), i < maxTextures - 1 && (src += `if(vTextureId < ${i}.5)`), src += `
 
 //# sourceMappingURL=BatchShaderGenerator.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/BatchTextureArray.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/BatchTextureArray.mjs
 class BatchTextureArray {
   constructor() {
     this.elements = [], this.ids = [], this.count = 0;
@@ -9272,7 +9272,7 @@ class BatchTextureArray {
 
 //# sourceMappingURL=BatchTextureArray.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/canUploadSameBuffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/canUploadSameBuffer.mjs
 
 function canUploadSameBuffer() {
   return !isMobile_isMobile.apple.device;
@@ -9280,7 +9280,7 @@ function canUploadSameBuffer() {
 
 //# sourceMappingURL=canUploadSameBuffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/maxRecommendedTextures.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/maxRecommendedTextures.mjs
 
 function maxRecommendedTextures(max) {
   let allowMax = !0;
@@ -9300,7 +9300,7 @@ function maxRecommendedTextures(max) {
 
 //# sourceMappingURL=maxRecommendedTextures.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/ObjectRenderer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/ObjectRenderer.mjs
 class ObjectRenderer {
   /**
    * @param renderer - The renderer this manager works for.
@@ -9338,7 +9338,7 @@ class ObjectRenderer {
 
 //# sourceMappingURL=ObjectRenderer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/texture.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/texture.frag.mjs
 var texture_frag_defaultFragment = `varying vec2 vTextureCoord;
 varying vec4 vColor;
 varying float vTextureId;
@@ -9353,7 +9353,7 @@ void main(void){
 
 //# sourceMappingURL=texture.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/texture.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/texture.vert.mjs
 var texture_vert_defaultVertex = `precision highp float;
 attribute vec2 aVertexPosition;
 attribute vec2 aTextureCoord;
@@ -9379,7 +9379,7 @@ void main(void){
 
 //# sourceMappingURL=texture.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/BatchRenderer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/BatchRenderer.mjs
 
 
 
@@ -9659,7 +9659,7 @@ extensions.add(BatchRenderer);
 
 //# sourceMappingURL=BatchRenderer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/defaultFilter.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/defaultFilter.frag.mjs
 var defaultFilter_frag_defaultFragment = `varying vec2 vTextureCoord;
 
 uniform sampler2D uSampler;
@@ -9671,7 +9671,7 @@ void main(void){
 
 //# sourceMappingURL=defaultFilter.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/defaultFilter.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/defaultFilter.vert.mjs
 var defaultFilter_vert_defaultVertex = `attribute vec2 aVertexPosition;
 
 uniform mat3 projectionMatrix;
@@ -9702,7 +9702,7 @@ void main(void)
 
 //# sourceMappingURL=defaultFilter.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/Filter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/Filter.mjs
 
 
 
@@ -9783,7 +9783,7 @@ let Filter = _Filter;
 
 //# sourceMappingURL=Filter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/background/BackgroundSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/background/BackgroundSystem.mjs
 
 
 class BackgroundSystem {
@@ -9857,7 +9857,7 @@ extensions.add(BackgroundSystem);
 
 //# sourceMappingURL=BackgroundSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/batch/BatchSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/batch/BatchSystem.mjs
 
 
 class BatchSystem {
@@ -9940,7 +9940,7 @@ extensions.add(BatchSystem);
 
 //# sourceMappingURL=BatchSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/context/ContextSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/context/ContextSystem.mjs
 
 
 
@@ -10120,7 +10120,7 @@ extensions.add(ContextSystem);
 
 //# sourceMappingURL=ContextSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/framebuffer/Framebuffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/framebuffer/Framebuffer.mjs
 
 
 
@@ -10210,7 +10210,7 @@ class Framebuffer {
 
 //# sourceMappingURL=Framebuffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/renderTexture/BaseRenderTexture.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/renderTexture/BaseRenderTexture.mjs
 
 
 
@@ -10283,7 +10283,7 @@ class BaseRenderTexture extends BaseTexture {
 
 //# sourceMappingURL=BaseRenderTexture.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/BaseImageResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/BaseImageResource.mjs
 
 
 
@@ -10339,7 +10339,7 @@ class BaseImageResource extends Resource {
 
 //# sourceMappingURL=BaseImageResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/ImageResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/ImageResource.mjs
 
 
 
@@ -10446,7 +10446,7 @@ class ImageResource extends BaseImageResource {
 
 //# sourceMappingURL=ImageResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/TextureUvs.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/TextureUvs.mjs
 
 class TextureUvs {
   constructor() {
@@ -10475,7 +10475,7 @@ TextureUvs.prototype.toString = function() {
 
 //# sourceMappingURL=TextureUvs.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/Texture.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/Texture.mjs
 
 
 
@@ -10746,7 +10746,7 @@ class Texture extends eventemitter3 {
 
 //# sourceMappingURL=Texture.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/renderTexture/RenderTexture.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/renderTexture/RenderTexture.mjs
 
 
 class RenderTexture extends Texture {
@@ -10811,7 +10811,7 @@ class RenderTexture extends Texture {
 
 //# sourceMappingURL=RenderTexture.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/renderTexture/RenderTexturePool.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/renderTexture/RenderTexturePool.mjs
 
 
 
@@ -10927,7 +10927,7 @@ RenderTexturePool.SCREEN_KEY = -1;
 
 //# sourceMappingURL=RenderTexturePool.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/utils/Quad.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/utils/Quad.mjs
 
 class Quad extends Geometry {
   constructor() {
@@ -10946,7 +10946,7 @@ class Quad extends Geometry {
 
 //# sourceMappingURL=Quad.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/utils/QuadUv.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/utils/QuadUv.mjs
 
 
 class QuadUv extends Geometry {
@@ -10992,7 +10992,7 @@ class QuadUv extends Geometry {
 
 //# sourceMappingURL=QuadUv.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/FilterState.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/FilterState.mjs
 
 
 class FilterState {
@@ -11007,7 +11007,7 @@ class FilterState {
 
 //# sourceMappingURL=FilterState.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/FilterSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/FilterSystem.mjs
 
 
 
@@ -11248,7 +11248,7 @@ extensions.add(FilterSystem);
 
 //# sourceMappingURL=FilterSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/framebuffer/GLFramebuffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/framebuffer/GLFramebuffer.mjs
 
 class GLFramebuffer {
   constructor(framebuffer) {
@@ -11258,7 +11258,7 @@ class GLFramebuffer {
 
 //# sourceMappingURL=GLFramebuffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/framebuffer/FramebufferSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/framebuffer/FramebufferSystem.mjs
 
 
 
@@ -11562,7 +11562,7 @@ extensions.add(FramebufferSystem);
 
 //# sourceMappingURL=FramebufferSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/GeometrySystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/GeometrySystem.mjs
 
 
 
@@ -11764,7 +11764,7 @@ extensions.add(GeometrySystem);
 
 //# sourceMappingURL=GeometrySystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/TextureMatrix.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/TextureMatrix.mjs
 
 const tempMat = new Matrix();
 class TextureMatrix {
@@ -11825,7 +11825,7 @@ class TextureMatrix {
 
 //# sourceMappingURL=TextureMatrix.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/spriteMask/spriteMaskFilter.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/spriteMask/spriteMaskFilter.frag.mjs
 var fragment = `varying vec2 vMaskCoord;
 varying vec2 vTextureCoord;
 
@@ -11855,7 +11855,7 @@ void main(void)
 
 //# sourceMappingURL=spriteMaskFilter.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/spriteMask/spriteMaskFilter.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/spriteMask/spriteMaskFilter.vert.mjs
 var vertex = `attribute vec2 aVertexPosition;
 attribute vec2 aTextureCoord;
 
@@ -11876,7 +11876,7 @@ void main(void)
 
 //# sourceMappingURL=spriteMaskFilter.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/filters/spriteMask/SpriteMaskFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/filters/spriteMask/SpriteMaskFilter.mjs
 
 
 
@@ -11913,7 +11913,7 @@ class SpriteMaskFilter extends Filter {
 
 //# sourceMappingURL=SpriteMaskFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/mask/MaskData.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/mask/MaskData.mjs
 
 
 class MaskData {
@@ -11950,7 +11950,7 @@ class MaskData {
 
 //# sourceMappingURL=MaskData.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/mask/MaskSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/mask/MaskSystem.mjs
 
 
 
@@ -12098,7 +12098,7 @@ extensions.add(MaskSystem);
 
 //# sourceMappingURL=MaskSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/mask/AbstractMaskSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/mask/AbstractMaskSystem.mjs
 class AbstractMaskSystem {
   /**
    * @param renderer - The renderer this System works for.
@@ -12134,7 +12134,7 @@ class AbstractMaskSystem {
 
 //# sourceMappingURL=AbstractMaskSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/mask/ScissorSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/mask/ScissorSystem.mjs
 
 
 
@@ -12232,7 +12232,7 @@ extensions.add(ScissorSystem);
 
 //# sourceMappingURL=ScissorSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/mask/StencilSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/mask/StencilSystem.mjs
 
 
 
@@ -12297,7 +12297,7 @@ extensions.add(StencilSystem);
 
 //# sourceMappingURL=StencilSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/plugin/PluginSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/plugin/PluginSystem.mjs
 
 
 class PluginSystem {
@@ -12348,7 +12348,7 @@ extensions.add(PluginSystem);
 
 //# sourceMappingURL=PluginSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/projection/ProjectionSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/projection/ProjectionSystem.mjs
 
 
 class ProjectionSystem {
@@ -12408,7 +12408,7 @@ extensions.add(ProjectionSystem);
 
 //# sourceMappingURL=ProjectionSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/renderTexture/GenerateTextureSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/renderTexture/GenerateTextureSystem.mjs
 
 
 
@@ -12455,7 +12455,7 @@ extensions.add(GenerateTextureSystem);
 
 //# sourceMappingURL=GenerateTextureSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/renderTexture/RenderTextureSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/renderTexture/RenderTextureSystem.mjs
 
 
 
@@ -12520,7 +12520,7 @@ extensions.add(RenderTextureSystem);
 
 //# sourceMappingURL=RenderTextureSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/GLProgram.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/GLProgram.mjs
 class IGLUniformData {
 }
 class GLProgram {
@@ -12540,7 +12540,7 @@ class GLProgram {
 
 //# sourceMappingURL=GLProgram.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/compileShader.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/compileShader.mjs
 function compileShader(gl, type, src) {
   const shader = gl.createShader(type);
   return gl.shaderSource(shader, src), gl.compileShader(shader), shader;
@@ -12548,7 +12548,7 @@ function compileShader(gl, type, src) {
 
 //# sourceMappingURL=compileShader.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/defaultValue.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/defaultValue.mjs
 function booleanArray(size) {
   const array = new Array(size);
   for (let i = 0; i < array.length; i++)
@@ -12634,7 +12634,7 @@ function defaultValue(type, size) {
 
 //# sourceMappingURL=defaultValue.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/getAttributeData.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/getAttributeData.mjs
 
 
 function getAttributeData(program, gl) {
@@ -12656,7 +12656,7 @@ function getAttributeData(program, gl) {
 
 //# sourceMappingURL=getAttributeData.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/getUniformData.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/getUniformData.mjs
 
 
 function getUniformData(program, gl) {
@@ -12677,7 +12677,7 @@ function getUniformData(program, gl) {
 
 //# sourceMappingURL=getUniformData.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/logProgramError.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/logProgramError.mjs
 function logPrettyShaderError(gl, shader) {
   const shaderSrc = gl.getShaderSource(shader).split(`
 `).map((line, index) => `${index}: ${line}`), shaderLog = gl.getShaderInfoLog(shader), splitShader = shaderLog.split(`
@@ -12695,7 +12695,7 @@ function logProgramError(gl, program, vertexShader, fragmentShader) {
 
 //# sourceMappingURL=logProgramError.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/generateProgram.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/generateProgram.mjs
 
 
 
@@ -12731,7 +12731,7 @@ function generateProgram(gl, program) {
 
 //# sourceMappingURL=generateProgram.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/generateUniformBufferSync.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/generateUniformBufferSync.mjs
 
 
 
@@ -12903,7 +12903,7 @@ function generateUniformBufferSync(group, uniformData) {
 
 //# sourceMappingURL=generateUniformBufferSync.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/utils/unsafeEvalSupported.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/utils/unsafeEvalSupported.mjs
 let unsafeEval;
 function unsafeEvalSupported() {
   if (typeof unsafeEval == "boolean")
@@ -12918,7 +12918,7 @@ function unsafeEvalSupported() {
 
 //# sourceMappingURL=unsafeEvalSupported.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/shader/ShaderSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/shader/ShaderSystem.mjs
 
 
 
@@ -13084,7 +13084,7 @@ extensions.add(ShaderSystem);
 
 //# sourceMappingURL=ShaderSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/startup/StartupSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/startup/StartupSystem.mjs
 
 class StartupSystem {
   constructor(renderer) {
@@ -13120,7 +13120,7 @@ extensions.add(StartupSystem);
 
 //# sourceMappingURL=StartupSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/state/utils/mapWebGLBlendModesToPixi.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/state/utils/mapWebGLBlendModesToPixi.mjs
 
 function mapWebGLBlendModesToPixi(gl, array = []) {
   return array[BLEND_MODES.NORMAL] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.ADD] = [gl.ONE, gl.ONE], array[BLEND_MODES.MULTIPLY] = [gl.DST_COLOR, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.SCREEN] = [gl.ONE, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.OVERLAY] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.DARKEN] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.LIGHTEN] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.COLOR_DODGE] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.COLOR_BURN] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.HARD_LIGHT] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.SOFT_LIGHT] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.DIFFERENCE] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.EXCLUSION] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.HUE] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.SATURATION] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.COLOR] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.LUMINOSITY] = [gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.NONE] = [0, 0], array[BLEND_MODES.NORMAL_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA, gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.ADD_NPM] = [gl.SRC_ALPHA, gl.ONE, gl.ONE, gl.ONE], array[BLEND_MODES.SCREEN_NPM] = [gl.SRC_ALPHA, gl.ONE_MINUS_SRC_COLOR, gl.ONE, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.SRC_IN] = [gl.DST_ALPHA, gl.ZERO], array[BLEND_MODES.SRC_OUT] = [gl.ONE_MINUS_DST_ALPHA, gl.ZERO], array[BLEND_MODES.SRC_ATOP] = [gl.DST_ALPHA, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.DST_OVER] = [gl.ONE_MINUS_DST_ALPHA, gl.ONE], array[BLEND_MODES.DST_IN] = [gl.ZERO, gl.SRC_ALPHA], array[BLEND_MODES.DST_OUT] = [gl.ZERO, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.DST_ATOP] = [gl.ONE_MINUS_DST_ALPHA, gl.SRC_ALPHA], array[BLEND_MODES.XOR] = [gl.ONE_MINUS_DST_ALPHA, gl.ONE_MINUS_SRC_ALPHA], array[BLEND_MODES.SUBTRACT] = [gl.ONE, gl.ONE, gl.ONE, gl.ONE, gl.FUNC_REVERSE_SUBTRACT, gl.FUNC_ADD], array;
@@ -13128,7 +13128,7 @@ function mapWebGLBlendModesToPixi(gl, array = []) {
 
 //# sourceMappingURL=mapWebGLBlendModesToPixi.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/state/StateSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/state/StateSystem.mjs
 
 
 
@@ -13277,7 +13277,7 @@ extensions.add(StateSystem);
 
 //# sourceMappingURL=StateSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/system/SystemManager.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/system/SystemManager.mjs
 
 
 class SystemManager extends eventemitter3 {
@@ -13363,7 +13363,7 @@ class SystemManager extends eventemitter3 {
 
 //# sourceMappingURL=SystemManager.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/TextureGCSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/TextureGCSystem.mjs
 
 
 const _TextureGCSystem = class _TextureGCSystem2 {
@@ -13432,7 +13432,7 @@ extensions.add(TextureGCSystem);
 
 //# sourceMappingURL=TextureGCSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/GLTexture.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/GLTexture.mjs
 
 class GLTexture {
   constructor(texture) {
@@ -13442,7 +13442,7 @@ class GLTexture {
 
 //# sourceMappingURL=GLTexture.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/utils/mapInternalFormatToSamplerType.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/utils/mapInternalFormatToSamplerType.mjs
 
 function mapInternalFormatToSamplerType(gl) {
   let table;
@@ -13519,7 +13519,7 @@ function mapInternalFormatToSamplerType(gl) {
 
 //# sourceMappingURL=mapInternalFormatToSamplerType.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/utils/mapTypeAndFormatToInternalFormat.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/utils/mapTypeAndFormatToInternalFormat.mjs
 
 function mapTypeAndFormatToInternalFormat(gl) {
   let table;
@@ -13633,7 +13633,7 @@ function mapTypeAndFormatToInternalFormat(gl) {
 
 //# sourceMappingURL=mapTypeAndFormatToInternalFormat.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/TextureSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/TextureSystem.mjs
 
 
 
@@ -13807,7 +13807,7 @@ extensions.add(TextureSystem);
 
 //# sourceMappingURL=TextureSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/transformFeedback/TransformFeedbackSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/transformFeedback/TransformFeedbackSystem.mjs
 
 class TransformFeedbackSystem {
   /**
@@ -13892,7 +13892,7 @@ extensions.add(TransformFeedbackSystem);
 
 //# sourceMappingURL=TransformFeedbackSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/view/ViewSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/view/ViewSystem.mjs
 
 
 
@@ -13963,7 +13963,7 @@ extensions.add(ViewSystem);
 
 //# sourceMappingURL=ViewSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/systems.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/systems.mjs
 
 
 
@@ -13988,7 +13988,7 @@ extensions.add(ViewSystem);
 
 //# sourceMappingURL=systems.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/settings.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/settings.mjs
 
 
 
@@ -14254,12 +14254,12 @@ Object.defineProperties(settings, {
 });
 //# sourceMappingURL=settings.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/ticker/lib/const.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/ticker/lib/const.mjs
 var UPDATE_PRIORITY = /* @__PURE__ */ ((UPDATE_PRIORITY2) => (UPDATE_PRIORITY2[UPDATE_PRIORITY2.INTERACTION = 50] = "INTERACTION", UPDATE_PRIORITY2[UPDATE_PRIORITY2.HIGH = 25] = "HIGH", UPDATE_PRIORITY2[UPDATE_PRIORITY2.NORMAL = 0] = "NORMAL", UPDATE_PRIORITY2[UPDATE_PRIORITY2.LOW = -25] = "LOW", UPDATE_PRIORITY2[UPDATE_PRIORITY2.UTILITY = -50] = "UTILITY", UPDATE_PRIORITY2))(UPDATE_PRIORITY || {});
 
 //# sourceMappingURL=const.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/ticker/lib/TickerListener.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/ticker/lib/TickerListener.mjs
 class TickerListener {
   /**
    * Constructor
@@ -14317,7 +14317,7 @@ class TickerListener {
 
 //# sourceMappingURL=TickerListener.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/ticker/lib/Ticker.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/ticker/lib/Ticker.mjs
 
 
 const _Ticker = class _Ticker2 {
@@ -14595,7 +14595,7 @@ let Ticker = _Ticker;
 
 //# sourceMappingURL=Ticker.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/ticker/lib/settings.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/ticker/lib/settings.mjs
 
 
 
@@ -14622,7 +14622,7 @@ Object.defineProperties(settings, {
 
 //# sourceMappingURL=settings.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/ticker/lib/TickerPlugin.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/ticker/lib/TickerPlugin.mjs
 
 
 
@@ -14671,7 +14671,7 @@ extensions.add(TickerPlugin);
 
 //# sourceMappingURL=TickerPlugin.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/ticker/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/ticker/lib/index.mjs
 
 
 
@@ -14679,7 +14679,7 @@ extensions.add(TickerPlugin);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/autoDetectRenderer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/autoDetectRenderer.mjs
 
 const renderers = [];
 extensions.handleByList(ExtensionType.Renderer, renderers);
@@ -14692,7 +14692,7 @@ function autoDetectRenderer(options) {
 
 //# sourceMappingURL=autoDetectRenderer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/fragments/default.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/fragments/default.vert.mjs
 var $defaultVertex = `attribute vec2 aVertexPosition;
 attribute vec2 aTextureCoord;
 
@@ -14708,7 +14708,7 @@ void main(void)
 
 //# sourceMappingURL=default.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/fragments/defaultFilter.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/fragments/defaultFilter.vert.mjs
 var $defaultFilterVertex = `attribute vec2 aVertexPosition;
 
 uniform mat3 projectionMatrix;
@@ -14739,14 +14739,14 @@ void main(void)
 
 //# sourceMappingURL=defaultFilter.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/fragments/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/fragments/index.mjs
 
 
 const fragments_defaultVertex = $defaultVertex, defaultFilterVertex = $defaultFilterVertex;
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/framebuffer/MultisampleSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/framebuffer/MultisampleSystem.mjs
 
 
 class MultisampleSystem {
@@ -14775,7 +14775,7 @@ extensions.add(MultisampleSystem);
 
 //# sourceMappingURL=MultisampleSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/GLBuffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/GLBuffer.mjs
 class GLBuffer {
   constructor(buffer) {
     this.buffer = buffer || null, this.updateID = -1, this.byteLength = -1, this.refCount = 0;
@@ -14784,7 +14784,7 @@ class GLBuffer {
 
 //# sourceMappingURL=GLBuffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/geometry/BufferSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/geometry/BufferSystem.mjs
 
 
 class BufferSystem {
@@ -14896,7 +14896,7 @@ extensions.add(BufferSystem);
 
 //# sourceMappingURL=BufferSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/render/ObjectRendererSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/render/ObjectRendererSystem.mjs
 
 class ObjectRendererSystem {
   // renderers scene graph!
@@ -14931,7 +14931,7 @@ extensions.add(ObjectRendererSystem);
 
 //# sourceMappingURL=ObjectRendererSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/Renderer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/Renderer.mjs
 
 
 
@@ -15191,7 +15191,7 @@ extensions.add(Renderer);
 
 //# sourceMappingURL=Renderer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/AbstractMultiResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/AbstractMultiResource.mjs
 
 
 
@@ -15277,7 +15277,7 @@ class AbstractMultiResource extends Resource {
 
 //# sourceMappingURL=AbstractMultiResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/ArrayResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/ArrayResource.mjs
 
 
 class ArrayResource extends AbstractMultiResource {
@@ -15360,7 +15360,7 @@ class ArrayResource extends AbstractMultiResource {
 
 //# sourceMappingURL=ArrayResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/CanvasResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/CanvasResource.mjs
 
 class CanvasResource extends BaseImageResource {
   /**
@@ -15383,7 +15383,7 @@ class CanvasResource extends BaseImageResource {
 
 //# sourceMappingURL=CanvasResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/CubeResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/CubeResource.mjs
 
 
 const _CubeResource = class _CubeResource2 extends AbstractMultiResource {
@@ -15464,7 +15464,7 @@ let CubeResource = _CubeResource;
 
 //# sourceMappingURL=CubeResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/ImageBitmapResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/ImageBitmapResource.mjs
 
 
 
@@ -15542,7 +15542,7 @@ class ImageBitmapResource extends BaseImageResource {
 
 //# sourceMappingURL=ImageBitmapResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/SVGResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/SVGResource.mjs
 
 
 
@@ -15621,7 +15621,7 @@ let SVGResource = _SVGResource;
 
 //# sourceMappingURL=SVGResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/VideoFrameResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/VideoFrameResource.mjs
 
 class VideoFrameResource extends BaseImageResource {
   /**
@@ -15643,7 +15643,7 @@ class VideoFrameResource extends BaseImageResource {
 
 //# sourceMappingURL=VideoFrameResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/VideoResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/VideoResource.mjs
 
 
 const _VideoResource = class _VideoResource2 extends BaseImageResource {
@@ -15806,7 +15806,7 @@ let VideoResource = _VideoResource;
 
 //# sourceMappingURL=VideoResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/textures/resources/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/textures/resources/index.mjs
 
 
 
@@ -15835,7 +15835,7 @@ INSTALLED.push(
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/transformFeedback/TransformFeedback.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/transformFeedback/TransformFeedback.mjs
 
 class TransformFeedback {
   constructor() {
@@ -15857,7 +15857,7 @@ class TransformFeedback {
 
 //# sourceMappingURL=TransformFeedback.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/core/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/core/lib/index.mjs
 
 
 
@@ -15953,7 +15953,7 @@ const VERSION = "7.4.2";
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/display/lib/Bounds.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/display/lib/Bounds.mjs
 
 class Bounds {
   constructor() {
@@ -16134,7 +16134,7 @@ class Bounds {
 
 //# sourceMappingURL=Bounds.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/display/lib/DisplayObject.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/display/lib/DisplayObject.mjs
 
 
 class DisplayObject extends eventemitter3 {
@@ -16500,7 +16500,7 @@ DisplayObject.prototype.displayObjectUpdateTransform = DisplayObject.prototype.u
 
 //# sourceMappingURL=DisplayObject.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/display/lib/Container.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/display/lib/Container.mjs
 
 
 const Container_tempMatrix = new Matrix();
@@ -16824,7 +16824,7 @@ Container.prototype.containerUpdateTransform = Container.prototype.updateTransfo
 
 //# sourceMappingURL=Container.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/display/lib/settings.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/display/lib/settings.mjs
 
 
 
@@ -16850,7 +16850,7 @@ Object.defineProperties(settings, {
 
 //# sourceMappingURL=settings.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/display/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/display/lib/index.mjs
 
 
 
@@ -16858,7 +16858,7 @@ Object.defineProperties(settings, {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite/lib/Sprite.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite/lib/Sprite.mjs
 
 
 const tempPoint = new Point(), indices = new Uint16Array([0, 1, 2, 0, 2, 3]);
@@ -17057,12 +17057,12 @@ class Sprite extends Container {
 
 //# sourceMappingURL=Sprite.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mixin-cache-as-bitmap/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mixin-cache-as-bitmap/lib/index.mjs
 
 
 
@@ -17197,7 +17197,7 @@ DisplayObject.prototype._cacheAsBitmapDestroy = function(options) {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mixin-get-child-by-name/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mixin-get-child-by-name/lib/index.mjs
 
 DisplayObject.prototype.name = null;
 Container.prototype.getChildByName = function(name, deep) {
@@ -17217,7 +17217,7 @@ Container.prototype.getChildByName = function(name, deep) {
 };
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mixin-get-global-position/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mixin-get-global-position/lib/index.mjs
 
 
 DisplayObject.prototype.getGlobalPosition = function(point = new Point(), skipUpdate = !1) {
@@ -17225,7 +17225,7 @@ DisplayObject.prototype.getGlobalPosition = function(point = new Point(), skipUp
 };
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-alpha/lib/alpha.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-alpha/lib/alpha.frag.mjs
 var alpha_frag_fragment = `varying vec2 vTextureCoord;
 
 uniform sampler2D uSampler;
@@ -17239,7 +17239,7 @@ void main(void)
 
 //# sourceMappingURL=alpha.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-alpha/lib/AlphaFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-alpha/lib/AlphaFilter.mjs
 
 
 class AlphaFilter extends Filter {
@@ -17263,12 +17263,12 @@ class AlphaFilter extends Filter {
 
 //# sourceMappingURL=AlphaFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-alpha/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-alpha/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-blur/lib/generateBlurFragSource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-blur/lib/generateBlurFragSource.mjs
 const GAUSSIAN_VALUES = {
   5: [0.153388, 0.221461, 0.250301],
   7: [0.071303, 0.131514, 0.189879, 0.214607],
@@ -17301,7 +17301,7 @@ function generateBlurFragSource(kernelSize) {
 
 //# sourceMappingURL=generateBlurFragSource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-blur/lib/generateBlurVertSource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-blur/lib/generateBlurVertSource.mjs
 const vertTemplate = `
     attribute vec2 aVertexPosition;
 
@@ -17347,7 +17347,7 @@ function generateBlurVertSource(kernelSize, x) {
 
 //# sourceMappingURL=generateBlurVertSource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-blur/lib/BlurFilterPass.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-blur/lib/BlurFilterPass.mjs
 
 
 
@@ -17415,7 +17415,7 @@ class BlurFilterPass extends Filter {
 
 //# sourceMappingURL=BlurFilterPass.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-blur/lib/BlurFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-blur/lib/BlurFilter.mjs
 
 
 class BlurFilter extends Filter {
@@ -17510,13 +17510,13 @@ class BlurFilter extends Filter {
 
 //# sourceMappingURL=BlurFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-blur/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-blur/lib/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-color-matrix/lib/colorMatrix.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-color-matrix/lib/colorMatrix.frag.mjs
 var colorMatrix_frag_fragment = `varying vec2 vTextureCoord;
 uniform sampler2D uSampler;
 uniform float m[20];
@@ -17573,7 +17573,7 @@ void main(void)
 
 //# sourceMappingURL=colorMatrix.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-color-matrix/lib/ColorMatrixFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-color-matrix/lib/ColorMatrixFilter.mjs
 
 
 class ColorMatrixFilter extends Filter {
@@ -18293,12 +18293,12 @@ ColorMatrixFilter.prototype.grayscale = ColorMatrixFilter.prototype.greyscale;
 
 //# sourceMappingURL=ColorMatrixFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-color-matrix/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-color-matrix/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-displacement/lib/displacement.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-displacement/lib/displacement.frag.mjs
 var displacement_frag_fragment = `varying vec2 vFilterCoord;
 varying vec2 vTextureCoord;
 
@@ -18323,7 +18323,7 @@ void main(void)
 
 //# sourceMappingURL=displacement.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-displacement/lib/displacement.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-displacement/lib/displacement.vert.mjs
 var displacement_vert_vertex = `attribute vec2 aVertexPosition;
 
 uniform mat3 projectionMatrix;
@@ -18357,7 +18357,7 @@ void main(void)
 
 //# sourceMappingURL=displacement.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-displacement/lib/DisplacementFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-displacement/lib/DisplacementFilter.mjs
 
 
 
@@ -18398,12 +18398,12 @@ class DisplacementFilter extends Filter {
 
 //# sourceMappingURL=DisplacementFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-displacement/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-displacement/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-fxaa/lib/fxaa.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-fxaa/lib/fxaa.frag.mjs
 var fxaa_frag_fragment = `varying vec2 v_rgbNW;
 varying vec2 v_rgbNE;
 varying vec2 v_rgbSW;
@@ -18529,7 +18529,7 @@ void main() {
 
 //# sourceMappingURL=fxaa.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-fxaa/lib/fxaa.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-fxaa/lib/fxaa.vert.mjs
 var fxaa_vert_vertex = `
 attribute vec2 aVertexPosition;
 
@@ -18576,7 +18576,7 @@ void main(void) {
 
 //# sourceMappingURL=fxaa.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-fxaa/lib/FXAAFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-fxaa/lib/FXAAFilter.mjs
 
 
 
@@ -18588,12 +18588,12 @@ class FXAAFilter extends Filter {
 
 //# sourceMappingURL=FXAAFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-fxaa/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-fxaa/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-noise/lib/noise.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-noise/lib/noise.frag.mjs
 var noise_frag_fragment = `precision highp float;
 
 varying vec2 vTextureCoord;
@@ -18632,7 +18632,7 @@ void main()
 
 //# sourceMappingURL=noise.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-noise/lib/NoiseFilter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-noise/lib/NoiseFilter.mjs
 
 
 class NoiseFilter extends Filter {
@@ -18667,7 +18667,7 @@ class NoiseFilter extends Filter {
 
 //# sourceMappingURL=NoiseFilter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/filter-noise/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/filter-noise/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
@@ -18741,7 +18741,7 @@ Object.entries(filters).forEach(([key, FilterClass]) => {
 
 //# sourceMappingURL=filters.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/EventTicker.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/EventTicker.mjs
 
 class EventsTickerClass {
   constructor() {
@@ -18802,7 +18802,7 @@ const EventsTicker = new EventsTickerClass();
 
 //# sourceMappingURL=EventTicker.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/FederatedEvent.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/FederatedEvent.mjs
 
 class FederatedEvent {
   /**
@@ -18884,7 +18884,7 @@ class FederatedEvent {
 
 //# sourceMappingURL=FederatedEvent.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/FederatedMouseEvent.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/FederatedMouseEvent.mjs
 
 
 class FederatedMouseEvent extends FederatedEvent {
@@ -18999,7 +18999,7 @@ class FederatedMouseEvent extends FederatedEvent {
 
 //# sourceMappingURL=FederatedMouseEvent.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/FederatedPointerEvent.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/FederatedPointerEvent.mjs
 
 class FederatedPointerEvent extends FederatedMouseEvent {
   constructor() {
@@ -19017,7 +19017,7 @@ class FederatedPointerEvent extends FederatedMouseEvent {
 
 //# sourceMappingURL=FederatedPointerEvent.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/FederatedWheelEvent.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/FederatedWheelEvent.mjs
 
 class FederatedWheelEvent extends FederatedMouseEvent {
   constructor() {
@@ -19030,7 +19030,7 @@ FederatedWheelEvent.DOM_DELTA_PAGE = 2;
 
 //# sourceMappingURL=FederatedWheelEvent.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/EventBoundary.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/EventBoundary.mjs
 
 
 
@@ -19645,7 +19645,7 @@ class EventBoundary {
 
 //# sourceMappingURL=EventBoundary.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/EventSystem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/EventSystem.mjs
 
 
 
@@ -19924,7 +19924,7 @@ extensions.add(EventSystem);
 
 //# sourceMappingURL=EventSystem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/FederatedEventTarget.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/FederatedEventTarget.mjs
 
 
 
@@ -20435,7 +20435,7 @@ DisplayObject.mixin(FederatedDisplayObject);
 
 //# sourceMappingURL=FederatedEventTarget.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/events/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/events/lib/index.mjs
 
 
 
@@ -20447,7 +20447,7 @@ DisplayObject.mixin(FederatedDisplayObject);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/accessibility/lib/accessibleTarget.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/accessibility/lib/accessibleTarget.mjs
 const accessibleTarget = {
   /**
    *  Flag for if the object is accessible. If true AccessibilityManager will overlay a
@@ -20517,7 +20517,7 @@ const accessibleTarget = {
 
 //# sourceMappingURL=accessibleTarget.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/accessibility/lib/AccessibilityManager.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/accessibility/lib/AccessibilityManager.mjs
 
 
 
@@ -20714,13 +20714,13 @@ extensions.add(AccessibilityManager);
 
 //# sourceMappingURL=AccessibilityManager.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/accessibility/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/accessibility/lib/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/app/lib/Application.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/app/lib/Application.mjs
 
 
 const _Application = class _Application2 {
@@ -20779,7 +20779,7 @@ extensions.handleByList(ExtensionType.Application, Application._plugins);
 
 //# sourceMappingURL=Application.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/app/lib/ResizePlugin.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/app/lib/ResizePlugin.mjs
 
 class ResizePlugin {
   /**
@@ -20839,13 +20839,13 @@ extensions.add(ResizePlugin);
 
 //# sourceMappingURL=ResizePlugin.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/app/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/app/lib/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/AssetExtension.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/AssetExtension.mjs
 
 const assetKeyMap = {
   loader: ExtensionType.LoadParser,
@@ -20867,7 +20867,7 @@ extensions.handle(ExtensionType.Asset, (extension) => {
 });
 //# sourceMappingURL=AssetExtension.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/BackgroundLoader.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/BackgroundLoader.mjs
 class BackgroundLoader {
   /**
    * @param loader
@@ -20913,7 +20913,7 @@ class BackgroundLoader {
 
 //# sourceMappingURL=BackgroundLoader.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/checkExtension.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/checkExtension.mjs
 
 function checkExtension(url, extension) {
   const tempURL = url.split("?")[0], ext = path.extname(tempURL).toLowerCase();
@@ -20922,7 +20922,7 @@ function checkExtension(url, extension) {
 
 //# sourceMappingURL=checkExtension.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/index.mjs
 
 
 
@@ -20932,12 +20932,12 @@ function checkExtension(url, extension) {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/convertToList.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/convertToList.mjs
 const convertToList = (input, transform, forceTransform = !1) => (Array.isArray(input) || (input = [input]), transform ? input.map((item) => typeof item == "string" || forceTransform ? transform(item) : item) : input);
 
 //# sourceMappingURL=convertToList.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/cache/Cache.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/cache/Cache.mjs
 
 
 
@@ -21024,12 +21024,12 @@ const Cache = new CacheClass();
 
 //# sourceMappingURL=Cache.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/isSingleItem.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/isSingleItem.mjs
 const isSingleItem = (item) => !Array.isArray(item);
 
 //# sourceMappingURL=isSingleItem.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/Loader.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/Loader.mjs
 
 
 
@@ -21127,12 +21127,12 @@ ${e}`);
 
 //# sourceMappingURL=Loader.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/LoaderParser.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/LoaderParser.mjs
 var LoaderParserPriority = /* @__PURE__ */ ((LoaderParserPriority2) => (LoaderParserPriority2[LoaderParserPriority2.Low = 0] = "Low", LoaderParserPriority2[LoaderParserPriority2.Normal = 1] = "Normal", LoaderParserPriority2[LoaderParserPriority2.High = 2] = "High", LoaderParserPriority2))(LoaderParserPriority || {});
 
 //# sourceMappingURL=LoaderParser.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/checkDataUrl.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/checkDataUrl.mjs
 function checkDataUrl(url, mimes) {
   if (Array.isArray(mimes)) {
     for (const mime of mimes)
@@ -21145,7 +21145,7 @@ function checkDataUrl(url, mimes) {
 
 //# sourceMappingURL=checkDataUrl.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/loadJson.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/loadJson.mjs
 
 
 
@@ -21167,7 +21167,7 @@ extensions.add(loadJson);
 
 //# sourceMappingURL=loadJson.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/loadTxt.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/loadTxt.mjs
 
 
 
@@ -21189,7 +21189,7 @@ extensions.add(loadTxt);
 
 //# sourceMappingURL=loadTxt.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/loadWebFont.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/loadWebFont.mjs
 
 
 
@@ -21259,7 +21259,7 @@ extensions.add(loadWebFont);
 
 //# sourceMappingURL=loadWebFont.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/_virtual/checkImageBitmap.worker.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/_virtual/checkImageBitmap.worker.mjs
 const WORKER_CODE = `(function() {
   "use strict";
   const WHITE_PNG = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=";
@@ -21290,7 +21290,7 @@ WorkerInstance.revokeObjectURL = function() {
 
 //# sourceMappingURL=checkImageBitmap.worker.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/_virtual/loadImageBitmap.worker.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/_virtual/loadImageBitmap.worker.mjs
 const loadImageBitmap_worker_WORKER_CODE = `(function() {
   "use strict";
   async function loadImageBitmap(url) {
@@ -21330,7 +21330,7 @@ loadImageBitmap_worker_WorkerInstance.revokeObjectURL = function() {
 
 //# sourceMappingURL=loadImageBitmap.worker.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/WorkerManager.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/WorkerManager.mjs
 
 
 let UUID = 0, MAX_WORKERS;
@@ -21390,7 +21390,7 @@ const WorkerManager = new WorkerManagerClass();
 
 //# sourceMappingURL=WorkerManager.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/textures/utils/createTexture.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/textures/utils/createTexture.mjs
 
 
 function createTexture(base, loader, url) {
@@ -21407,7 +21407,7 @@ function createTexture(base, loader, url) {
 
 //# sourceMappingURL=createTexture.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/textures/loadTextures.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/textures/loadTextures.mjs
 
 
 
@@ -21461,7 +21461,7 @@ extensions.add(loadTextures);
 
 //# sourceMappingURL=loadTextures.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/textures/loadSVG.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/textures/loadSVG.mjs
 
 
 
@@ -21498,7 +21498,7 @@ extensions.add(loadSVG);
 
 //# sourceMappingURL=loadSVG.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/textures/loadVideo.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/textures/loadVideo.mjs
 
 
 
@@ -21559,21 +21559,12 @@ extensions.add(loadVideo);
 
 //# sourceMappingURL=loadVideo.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/textures/utils/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/textures/utils/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/textures/index.mjs
-
-
-
-
-
-//# sourceMappingURL=index.mjs.map
-
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/parsers/index.mjs
-
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/textures/index.mjs
 
 
 
@@ -21581,7 +21572,16 @@ extensions.add(loadVideo);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/createStringVariations.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/parsers/index.mjs
+
+
+
+
+
+
+//# sourceMappingURL=index.mjs.map
+
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/createStringVariations.mjs
 function processX(base, ids, depth, result, tags) {
   const id = ids[depth];
   for (let i = 0; i < id.length; i++) {
@@ -21604,7 +21604,7 @@ function createStringVariations(string) {
 
 //# sourceMappingURL=createStringVariations.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/resolver/Resolver.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/resolver/Resolver.mjs
 
 
 
@@ -21995,7 +21995,7 @@ Please use Assets.add({ alias, src, data, format, loadParser }) instead.`), asse
 
 //# sourceMappingURL=Resolver.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/Assets.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/Assets.mjs
 
 
 
@@ -22329,7 +22329,7 @@ extensions.handleByList(ExtensionType.LoadParser, Assets.loader.parsers).handleB
 
 //# sourceMappingURL=Assets.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/cache/parsers/cacheTextureArray.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/cache/parsers/cacheTextureArray.mjs
 
 const cacheTextureArray = {
   extension: ExtensionType.CacheParser,
@@ -22347,19 +22347,19 @@ extensions.add(cacheTextureArray);
 
 //# sourceMappingURL=cacheTextureArray.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/cache/parsers/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/cache/parsers/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/cache/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/cache/index.mjs
 
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/utils/testImageFormat.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/utils/testImageFormat.mjs
 async function testImageFormat(imageData) {
   if ("Image" in globalThis)
     return new Promise((resolve) => {
@@ -22384,7 +22384,7 @@ async function testImageFormat(imageData) {
 
 //# sourceMappingURL=testImageFormat.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/detectAvif.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/detectAvif.mjs
 
 
 const detectAvif = {
@@ -22403,7 +22403,7 @@ extensions.add(detectAvif);
 
 //# sourceMappingURL=detectAvif.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/detectWebp.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/detectWebp.mjs
 
 
 const detectWebp = {
@@ -22421,7 +22421,7 @@ extensions.add(detectWebp);
 
 //# sourceMappingURL=detectWebp.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/detectDefaults.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/detectDefaults.mjs
 
 const imageFormats = ["png", "jpg", "jpeg"], detectDefaults = {
   extension: {
@@ -22436,7 +22436,7 @@ extensions.add(detectDefaults);
 
 //# sourceMappingURL=detectDefaults.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/utils/testVideoFormat.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/utils/testVideoFormat.mjs
 const inWorker = "WorkerGlobalScope" in globalThis && globalThis instanceof globalThis.WorkerGlobalScope;
 function testVideoFormat(mimeType) {
   return inWorker ? !1 : document.createElement("video").canPlayType(mimeType) !== "";
@@ -22444,7 +22444,7 @@ function testVideoFormat(mimeType) {
 
 //# sourceMappingURL=testVideoFormat.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/detectWebm.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/detectWebm.mjs
 
 
 const detectWebm = {
@@ -22460,7 +22460,7 @@ extensions.add(detectWebm);
 
 //# sourceMappingURL=detectWebm.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/detectMp4.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/detectMp4.mjs
 
 
 const detectMp4 = {
@@ -22476,7 +22476,7 @@ extensions.add(detectMp4);
 
 //# sourceMappingURL=detectMp4.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/detectOgv.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/detectOgv.mjs
 
 
 const detectOgv = {
@@ -22492,7 +22492,7 @@ extensions.add(detectOgv);
 
 //# sourceMappingURL=detectOgv.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/parsers/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/parsers/index.mjs
 
 
 
@@ -22502,15 +22502,15 @@ extensions.add(detectOgv);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/detections/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/detections/index.mjs
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/loader/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/loader/index.mjs
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/resolver/parsers/resolveTextureUrl.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/resolver/parsers/resolveTextureUrl.mjs
 
 
 
@@ -22527,17 +22527,17 @@ extensions.add(resolveTextureUrl);
 
 //# sourceMappingURL=resolveTextureUrl.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/resolver/parsers/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/resolver/parsers/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/resolver/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/resolver/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/utils/copySearchParams.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/utils/copySearchParams.mjs
 const copySearchParams = (targetUrl, sourceUrl) => {
   const searchParams = sourceUrl.split("?")[1];
   return searchParams && (targetUrl += `?${searchParams}`), targetUrl;
@@ -22545,7 +22545,7 @@ const copySearchParams = (targetUrl, sourceUrl) => {
 
 //# sourceMappingURL=copySearchParams.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/assets/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/assets/lib/index.mjs
 
 
 
@@ -22580,7 +22580,7 @@ const copySearchParams = (targetUrl, sourceUrl) => {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/const.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/const.mjs
 var INTERNAL_FORMATS = /* @__PURE__ */ ((INTERNAL_FORMATS2) => (INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_S3TC_DXT1_EXT = 33776] = "COMPRESSED_RGB_S3TC_DXT1_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_S3TC_DXT1_EXT = 33777] = "COMPRESSED_RGBA_S3TC_DXT1_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_S3TC_DXT3_EXT = 33778] = "COMPRESSED_RGBA_S3TC_DXT3_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_S3TC_DXT5_EXT = 33779] = "COMPRESSED_RGBA_S3TC_DXT5_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT = 35917] = "COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT = 35918] = "COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT = 35919] = "COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB_S3TC_DXT1_EXT = 35916] = "COMPRESSED_SRGB_S3TC_DXT1_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_R11_EAC = 37488] = "COMPRESSED_R11_EAC", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SIGNED_R11_EAC = 37489] = "COMPRESSED_SIGNED_R11_EAC", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RG11_EAC = 37490] = "COMPRESSED_RG11_EAC", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SIGNED_RG11_EAC = 37491] = "COMPRESSED_SIGNED_RG11_EAC", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB8_ETC2 = 37492] = "COMPRESSED_RGB8_ETC2", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA8_ETC2_EAC = 37496] = "COMPRESSED_RGBA8_ETC2_EAC", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB8_ETC2 = 37493] = "COMPRESSED_SRGB8_ETC2", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC = 37497] = "COMPRESSED_SRGB8_ALPHA8_ETC2_EAC", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 = 37494] = "COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 = 37495] = "COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_PVRTC_4BPPV1_IMG = 35840] = "COMPRESSED_RGB_PVRTC_4BPPV1_IMG", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_PVRTC_4BPPV1_IMG = 35842] = "COMPRESSED_RGBA_PVRTC_4BPPV1_IMG", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_PVRTC_2BPPV1_IMG = 35841] = "COMPRESSED_RGB_PVRTC_2BPPV1_IMG", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_PVRTC_2BPPV1_IMG = 35843] = "COMPRESSED_RGBA_PVRTC_2BPPV1_IMG", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_ETC1_WEBGL = 36196] = "COMPRESSED_RGB_ETC1_WEBGL", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_ATC_WEBGL = 35986] = "COMPRESSED_RGB_ATC_WEBGL", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_ATC_EXPLICIT_ALPHA_WEBGL = 35987] = "COMPRESSED_RGBA_ATC_EXPLICIT_ALPHA_WEBGL", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_ATC_INTERPOLATED_ALPHA_WEBGL = 34798] = "COMPRESSED_RGBA_ATC_INTERPOLATED_ALPHA_WEBGL", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_ASTC_4x4_KHR = 37808] = "COMPRESSED_RGBA_ASTC_4x4_KHR", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGBA_BPTC_UNORM_EXT = 36492] = "COMPRESSED_RGBA_BPTC_UNORM_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT = 36493] = "COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT = 36494] = "COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT", INTERNAL_FORMATS2[INTERNAL_FORMATS2.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT = 36495] = "COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT", INTERNAL_FORMATS2))(INTERNAL_FORMATS || {});
 const INTERNAL_FORMAT_TO_BYTES_PER_PIXEL = {
   // WEBGL_compressed_texture_s3tc
@@ -22632,11 +22632,11 @@ const INTERNAL_FORMAT_TO_BYTES_PER_PIXEL = {
 
 //# sourceMappingURL=const.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/loaders/compressedTextureExtensions.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/loaders/compressedTextureExtensions.mjs
 
 //# sourceMappingURL=compressedTextureExtensions.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/loaders/detectCompressedTextures.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/loaders/detectCompressedTextures.mjs
 
 let storedGl, detectCompressedTextures_extensions;
 function getCompressedTextureExtensions() {
@@ -22674,7 +22674,7 @@ extensions.add(detectCompressedTextures);
 
 //# sourceMappingURL=detectCompressedTextures.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/resources/BlobResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/resources/BlobResource.mjs
 
 class BlobResource extends BufferResource {
   /**
@@ -22700,7 +22700,7 @@ class BlobResource extends BufferResource {
 
 //# sourceMappingURL=BlobResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/resources/CompressedTextureResource.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/resources/CompressedTextureResource.mjs
 
 
 class CompressedTextureResource extends BlobResource {
@@ -22809,13 +22809,13 @@ class CompressedTextureResource extends BlobResource {
 
 //# sourceMappingURL=CompressedTextureResource.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/resources/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/resources/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/parsers/parseDDS.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/parsers/parseDDS.mjs
 
 
 
@@ -22923,7 +22923,7 @@ function parseDDS(arrayBuffer) {
 
 //# sourceMappingURL=parseDDS.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/parsers/parseKTX.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/parsers/parseKTX.mjs
 
 
 
@@ -23086,13 +23086,13 @@ function parseKvData(dataView, bytesOfKeyValueData, littleEndian) {
 
 //# sourceMappingURL=parseKTX.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/parsers/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/parsers/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/loaders/loadDDS.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/loaders/loadDDS.mjs
 
 
 
@@ -23126,7 +23126,7 @@ extensions.add(loadDDS);
 
 //# sourceMappingURL=loadDDS.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/loaders/loadKTX.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/loaders/loadKTX.mjs
 
 
 
@@ -23164,7 +23164,7 @@ extensions.add(loadKTX);
 
 //# sourceMappingURL=loadKTX.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/loaders/resolveCompressedTextureUrl.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/loaders/resolveCompressedTextureUrl.mjs
 
 const knownFormats = ["s3tc", "s3tc_sRGB", "etc", "etc1", "pvrtc", "atc", "astc", "bptc"], resolveCompressedTextureUrl = {
   extension: ExtensionType.ResolveParser,
@@ -23194,7 +23194,7 @@ extensions.add(resolveCompressedTextureUrl);
 
 //# sourceMappingURL=resolveCompressedTextureUrl.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/loaders/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/loaders/index.mjs
 
 
 
@@ -23203,7 +23203,7 @@ extensions.add(resolveCompressedTextureUrl);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/compressed-textures/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/compressed-textures/lib/index.mjs
 
 
 
@@ -23219,7 +23219,7 @@ extensions.add(resolveCompressedTextureUrl);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/extract/lib/Extract.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/extract/lib/Extract.mjs
 
 const TEMP_RECT = new Rectangle(), BYTES_PER_PIXEL = 4, _Extract = class _Extract2 {
   /**
@@ -23366,12 +23366,12 @@ extensions.add(Extract);
 
 //# sourceMappingURL=Extract.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/extract/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/extract/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/buildCircle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/buildCircle.mjs
 
 const buildCircle = {
   build(graphicsData) {
@@ -23442,7 +23442,7 @@ const buildCircle = {
 
 //# sourceMappingURL=buildCircle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/buildPoly.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/buildPoly.mjs
 
 function fixOrientation(points, hole = !1) {
   const m = points.length;
@@ -23489,7 +23489,7 @@ const buildPoly = {
 
 //# sourceMappingURL=buildPoly.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/buildRectangle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/buildRectangle.mjs
 const buildRectangle = {
   build(graphicsData) {
     const rectData = graphicsData.shape, x = rectData.x, y = rectData.y, width = rectData.width, height = rectData.height, points = graphicsData.points;
@@ -23531,7 +23531,7 @@ const buildRectangle = {
 
 //# sourceMappingURL=buildRectangle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/buildRoundedRectangle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/buildRoundedRectangle.mjs
 
 const buildRoundedRectangle = {
   build(graphicsData) {
@@ -23544,7 +23544,7 @@ const buildRoundedRectangle = {
 
 //# sourceMappingURL=buildRoundedRectangle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/const.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/const.mjs
 var LINE_JOIN = /* @__PURE__ */ ((LINE_JOIN2) => (LINE_JOIN2.MITER = "miter", LINE_JOIN2.BEVEL = "bevel", LINE_JOIN2.ROUND = "round", LINE_JOIN2))(LINE_JOIN || {}), LINE_CAP = /* @__PURE__ */ ((LINE_CAP2) => (LINE_CAP2.BUTT = "butt", LINE_CAP2.ROUND = "round", LINE_CAP2.SQUARE = "square", LINE_CAP2))(LINE_CAP || {});
 const curves = {
   adaptive: !0,
@@ -23562,7 +23562,7 @@ const curves = {
 
 //# sourceMappingURL=const.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/ArcUtils.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/ArcUtils.mjs
 
 
 class ArcUtils {
@@ -23624,7 +23624,7 @@ class ArcUtils {
 
 //# sourceMappingURL=ArcUtils.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/BezierUtils.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/BezierUtils.mjs
 
 class BezierUtils {
   /**
@@ -23679,7 +23679,7 @@ class BezierUtils {
 
 //# sourceMappingURL=BezierUtils.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/buildLine.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/buildLine.mjs
 
 
 function square(x, y, nx, ny, innerWeight, outerWeight, clockwise, verts) {
@@ -23978,7 +23978,7 @@ function buildLine(graphicsData, graphicsGeometry) {
 
 //# sourceMappingURL=buildLine.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/QuadraticUtils.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/QuadraticUtils.mjs
 
 class QuadraticUtils {
   /**
@@ -24025,7 +24025,7 @@ class QuadraticUtils {
 
 //# sourceMappingURL=QuadraticUtils.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/index.mjs
 
 
 
@@ -24046,7 +24046,7 @@ const FILL_COMMANDS = {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/GraphicsData.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/GraphicsData.mjs
 class GraphicsData {
   /**
    * @param {PIXI.Circle|PIXI.Ellipse|PIXI.Polygon|PIXI.Rectangle|PIXI.RoundedRectangle} shape - The shape object to draw.
@@ -24077,7 +24077,7 @@ class GraphicsData {
 
 //# sourceMappingURL=GraphicsData.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/utils/BatchPart.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/utils/BatchPart.mjs
 class BatchPart {
   constructor() {
     this.reset();
@@ -24106,7 +24106,7 @@ class BatchPart {
 
 //# sourceMappingURL=BatchPart.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/GraphicsGeometry.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/GraphicsGeometry.mjs
 
 
 
@@ -24425,7 +24425,7 @@ let GraphicsGeometry = _GraphicsGeometry;
 
 //# sourceMappingURL=GraphicsGeometry.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/styles/FillStyle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/styles/FillStyle.mjs
 
 class FillStyle {
   constructor() {
@@ -24448,7 +24448,7 @@ class FillStyle {
 
 //# sourceMappingURL=FillStyle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/styles/LineStyle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/styles/LineStyle.mjs
 
 
 class LineStyle extends FillStyle {
@@ -24468,7 +24468,7 @@ class LineStyle extends FillStyle {
 
 //# sourceMappingURL=LineStyle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/Graphics.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/Graphics.mjs
 
 
 
@@ -25030,7 +25030,7 @@ let Graphics = _Graphics;
 
 //# sourceMappingURL=Graphics.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/graphics/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/graphics/lib/index.mjs
 
 
 
@@ -25064,7 +25064,7 @@ const graphicsUtils = {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/MeshBatchUvs.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/MeshBatchUvs.mjs
 class MeshBatchUvs {
   /**
    * @param uvBuffer - Buffer with normalized uv's
@@ -25088,7 +25088,7 @@ class MeshBatchUvs {
 
 //# sourceMappingURL=MeshBatchUvs.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/Mesh.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/Mesh.mjs
 
 
 
@@ -25269,7 +25269,7 @@ let Mesh = _Mesh;
 
 //# sourceMappingURL=Mesh.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/MeshGeometry.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/MeshGeometry.mjs
 
 class MeshGeometry extends Geometry {
   /**
@@ -25294,7 +25294,7 @@ class MeshGeometry extends Geometry {
 
 //# sourceMappingURL=MeshGeometry.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/shader/mesh.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/shader/mesh.frag.mjs
 var mesh_frag_fragment = `varying vec2 vTextureCoord;
 uniform vec4 uColor;
 
@@ -25308,7 +25308,7 @@ void main(void)
 
 //# sourceMappingURL=mesh.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/shader/mesh.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/shader/mesh.vert.mjs
 var mesh_vert_vertex = `attribute vec2 aVertexPosition;
 attribute vec2 aTextureCoord;
 
@@ -25328,7 +25328,7 @@ void main(void)
 
 //# sourceMappingURL=mesh.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/MeshMaterial.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/MeshMaterial.mjs
 
 
 
@@ -25402,7 +25402,7 @@ class MeshMaterial extends Shader {
 
 //# sourceMappingURL=MeshMaterial.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh/lib/index.mjs
 
 
 
@@ -25410,7 +25410,7 @@ class MeshMaterial extends Shader {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/geometry/PlaneGeometry.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/geometry/PlaneGeometry.mjs
 
 class PlaneGeometry extends MeshGeometry {
   /**
@@ -25450,7 +25450,7 @@ class PlaneGeometry extends MeshGeometry {
 
 //# sourceMappingURL=PlaneGeometry.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/geometry/RopeGeometry.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/geometry/RopeGeometry.mjs
 
 class RopeGeometry extends MeshGeometry {
   /**
@@ -25531,7 +25531,7 @@ class RopeGeometry extends MeshGeometry {
 
 //# sourceMappingURL=RopeGeometry.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/SimplePlane.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/SimplePlane.mjs
 
 
 
@@ -25570,7 +25570,7 @@ class SimplePlane extends Mesh {
 
 //# sourceMappingURL=SimplePlane.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/NineSlicePlane.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/NineSlicePlane.mjs
 
 
 const DEFAULT_BORDER_SIZE = 10;
@@ -25665,7 +25665,7 @@ class NineSlicePlane extends SimplePlane {
 
 //# sourceMappingURL=NineSlicePlane.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/SimpleMesh.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/SimpleMesh.mjs
 
 
 class SimpleMesh extends Mesh {
@@ -25699,7 +25699,7 @@ class SimpleMesh extends Mesh {
 
 //# sourceMappingURL=SimpleMesh.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/SimpleRope.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/SimpleRope.mjs
 
 
 
@@ -25724,7 +25724,7 @@ class SimpleRope extends Mesh {
 
 //# sourceMappingURL=SimpleRope.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/mesh-extras/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/mesh-extras/lib/index.mjs
 
 
 
@@ -25734,7 +25734,7 @@ class SimpleRope extends Mesh {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/particle-container/lib/ParticleContainer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/particle-container/lib/ParticleContainer.mjs
 
 
 class ParticleContainer extends Container {
@@ -25821,7 +25821,7 @@ class ParticleContainer extends Container {
 
 //# sourceMappingURL=ParticleContainer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/particle-container/lib/ParticleBuffer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/particle-container/lib/ParticleBuffer.mjs
 
 class ParticleBuffer {
   /**
@@ -25935,7 +25935,7 @@ class ParticleBuffer {
 
 //# sourceMappingURL=ParticleBuffer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/particle-container/lib/particles.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/particle-container/lib/particles.frag.mjs
 var particles_frag_fragment = `varying vec2 vTextureCoord;
 varying vec4 vColor;
 
@@ -25948,7 +25948,7 @@ void main(void){
 
 //# sourceMappingURL=particles.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/particle-container/lib/particles.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/particle-container/lib/particles.vert.mjs
 var particles_vert_vertex = `attribute vec2 aVertexPosition;
 attribute vec2 aTextureCoord;
 attribute vec4 aColor;
@@ -25978,7 +25978,7 @@ void main(void){
 
 //# sourceMappingURL=particles.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/particle-container/lib/ParticleRenderer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/particle-container/lib/ParticleRenderer.mjs
 
 
 
@@ -26162,18 +26162,18 @@ extensions.add(ParticleRenderer);
 
 //# sourceMappingURL=ParticleRenderer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/particle-container/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/particle-container/lib/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text/lib/const.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text/lib/const.mjs
 var TEXT_GRADIENT = /* @__PURE__ */ ((TEXT_GRADIENT2) => (TEXT_GRADIENT2[TEXT_GRADIENT2.LINEAR_VERTICAL = 0] = "LINEAR_VERTICAL", TEXT_GRADIENT2[TEXT_GRADIENT2.LINEAR_HORIZONTAL = 1] = "LINEAR_HORIZONTAL", TEXT_GRADIENT2))(TEXT_GRADIENT || {});
 
 //# sourceMappingURL=const.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text/lib/TextMetrics.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text/lib/TextMetrics.mjs
 
 const contextSettings = {
   // TextMetrics requires getImageData readback for measuring fonts.
@@ -26594,7 +26594,7 @@ let TextMetrics = _TextMetrics;
 
 //# sourceMappingURL=TextMetrics.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text/lib/TextStyle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text/lib/TextStyle.mjs
 
 
 const genericFontFamilies = [
@@ -27048,7 +27048,7 @@ function deepCopyProperties(target, source, propertyObj) {
 
 //# sourceMappingURL=TextStyle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text/lib/Text.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text/lib/Text.mjs
 
 
 
@@ -27314,7 +27314,7 @@ let Text = _Text;
 
 //# sourceMappingURL=Text.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text/lib/index.mjs
 
 
 
@@ -27322,7 +27322,7 @@ let Text = _Text;
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/prepare/lib/CountLimiter.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/prepare/lib/CountLimiter.mjs
 class CountLimiter {
   /**
    * @param maxItemsPerFrame - The maximum number of items that can be prepared each frame.
@@ -27345,7 +27345,7 @@ class CountLimiter {
 
 //# sourceMappingURL=CountLimiter.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/prepare/lib/BasePrepare.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/prepare/lib/BasePrepare.mjs
 
 
 
@@ -27494,7 +27494,7 @@ let BasePrepare = _BasePrepare;
 
 //# sourceMappingURL=BasePrepare.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/prepare/lib/settings.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/prepare/lib/settings.mjs
 
 
 
@@ -27520,7 +27520,7 @@ Object.defineProperties(settings, {
 
 //# sourceMappingURL=settings.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/prepare/lib/Prepare.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/prepare/lib/Prepare.mjs
 
 
 
@@ -27558,7 +27558,7 @@ extensions.add(Prepare);
 
 //# sourceMappingURL=Prepare.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/prepare/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/prepare/lib/index.mjs
 
 
 
@@ -27567,7 +27567,7 @@ extensions.add(Prepare);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-animated/lib/AnimatedSprite.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-animated/lib/AnimatedSprite.mjs
 
 
 class AnimatedSprite extends Sprite {
@@ -27712,12 +27712,12 @@ class AnimatedSprite extends Sprite {
 
 //# sourceMappingURL=AnimatedSprite.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-animated/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-animated/lib/index.mjs
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/TilingSprite.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/TilingSprite.mjs
 
 
 const TilingSprite_tempPoint = new Point();
@@ -27848,7 +27848,7 @@ class TilingSprite extends Sprite {
 
 //# sourceMappingURL=TilingSprite.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/sprite-tiling.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/sprite-tiling.frag.mjs
 var gl2FragmentSrc = `#version 300 es
 #define SHADER_NAME Tiling-Sprite-100
 
@@ -27879,7 +27879,7 @@ void main(void)
 
 //# sourceMappingURL=sprite-tiling.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/sprite-tiling.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/sprite-tiling.vert.mjs
 var gl2VertexSrc = `#version 300 es
 #define SHADER_NAME Tiling-Sprite-300
 
@@ -27904,7 +27904,7 @@ void main(void)
 
 //# sourceMappingURL=sprite-tiling.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/sprite-tiling-fallback.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/sprite-tiling-fallback.frag.mjs
 var gl1FragmentSrc = `#version 100
 #ifdef GL_EXT_shader_texture_lod
     #extension GL_EXT_shader_texture_lod : enable
@@ -27942,7 +27942,7 @@ void main(void)
 
 //# sourceMappingURL=sprite-tiling-fallback.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/sprite-tiling-fallback.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/sprite-tiling-fallback.vert.mjs
 var gl1VertexSrc = `#version 100
 #define SHADER_NAME Tiling-Sprite-100
 
@@ -27967,7 +27967,7 @@ void main(void)
 
 //# sourceMappingURL=sprite-tiling-fallback.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/sprite-tiling-simple.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/sprite-tiling-simple.frag.mjs
 var fragmentSimpleSrc = `#version 100
 #define SHADER_NAME Tiling-Sprite-Simple-100
 
@@ -27987,7 +27987,7 @@ void main(void)
 
 //# sourceMappingURL=sprite-tiling-simple.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/TilingSpriteRenderer.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/TilingSpriteRenderer.mjs
 
 
 
@@ -28039,13 +28039,13 @@ extensions.add(TilingSpriteRenderer);
 
 //# sourceMappingURL=TilingSpriteRenderer.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/sprite-tiling/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/sprite-tiling/lib/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/spritesheet/lib/Spritesheet.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/spritesheet/lib/Spritesheet.mjs
 
 const _Spritesheet = class _Spritesheet2 {
   /** @ignore */
@@ -28160,7 +28160,7 @@ let Spritesheet = _Spritesheet;
 
 //# sourceMappingURL=Spritesheet.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/spritesheet/lib/spritesheetAsset.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/spritesheet/lib/spritesheetAsset.mjs
 
 
 
@@ -28290,13 +28290,13 @@ extensions.add(spritesheetAsset);
 
 //# sourceMappingURL=spritesheetAsset.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/spritesheet/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/spritesheet/lib/index.mjs
 
 
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/BitmapFontData.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/BitmapFontData.mjs
 class BitmapFontData {
   constructor() {
     this.info = [], this.common = [], this.page = [], this.char = [], this.kerning = [], this.distanceField = [];
@@ -28305,7 +28305,7 @@ class BitmapFontData {
 
 //# sourceMappingURL=BitmapFontData.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/formats/TextFormat.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/formats/TextFormat.mjs
 
 class TextFormat {
   /**
@@ -28372,7 +28372,7 @@ class TextFormat {
 
 //# sourceMappingURL=TextFormat.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/formats/XMLFormat.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/formats/XMLFormat.mjs
 
 class XMLFormat {
   /**
@@ -28436,7 +28436,7 @@ class XMLFormat {
 
 //# sourceMappingURL=XMLFormat.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/formats/XMLStringFormat.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/formats/XMLStringFormat.mjs
 
 
 class XMLStringFormat {
@@ -28460,7 +28460,7 @@ class XMLStringFormat {
 
 //# sourceMappingURL=XMLStringFormat.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/formats/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/formats/index.mjs
 
 
 
@@ -28478,7 +28478,7 @@ function autoDetectFormat(data) {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/utils/generateFillStyle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/utils/generateFillStyle.mjs
 
 function generateFillStyle(canvas, context, style, resolution, lines, metrics) {
   const fillStyle = style.fill;
@@ -28522,7 +28522,7 @@ function generateFillStyle(canvas, context, style, resolution, lines, metrics) {
 
 //# sourceMappingURL=generateFillStyle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/utils/drawGlyph.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/utils/drawGlyph.mjs
 
 
 function drawGlyph(canvas, context, metrics, x, y, resolution, style) {
@@ -28539,7 +28539,7 @@ function drawGlyph(canvas, context, metrics, x, y, resolution, style) {
 
 //# sourceMappingURL=drawGlyph.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/utils/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/utils/index.mjs
 
 
 
@@ -28548,14 +28548,14 @@ function drawGlyph(canvas, context, metrics, x, y, resolution, style) {
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/utils/splitTextToCharacters.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/utils/splitTextToCharacters.mjs
 function splitTextToCharacters(text) {
   return Array.from ? Array.from(text) : text.split("");
 }
 
 //# sourceMappingURL=splitTextToCharacters.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/utils/resolveCharacters.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/utils/resolveCharacters.mjs
 
 function resolveCharacters(chars) {
   typeof chars == "string" && (chars = [chars]);
@@ -28580,14 +28580,14 @@ function resolveCharacters(chars) {
 
 //# sourceMappingURL=resolveCharacters.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/utils/extractCharCode.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/utils/extractCharCode.mjs
 function extractCharCode(str) {
   return str.codePointAt ? str.codePointAt(0) : str.charCodeAt(0);
 }
 
 //# sourceMappingURL=extractCharCode.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/BitmapFont.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/BitmapFont.mjs
 
 
 
@@ -28820,7 +28820,7 @@ let BitmapFont = _BitmapFont;
 
 //# sourceMappingURL=BitmapFont.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/shader/msdf.frag.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/shader/msdf.frag.mjs
 var msdfFrag = `// Pixi texture info\r
 varying vec2 vTextureCoord;\r
 uniform sampler2D uSampler;\r
@@ -28863,7 +28863,7 @@ void main(void) {\r
 
 //# sourceMappingURL=msdf.frag.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/shader/msdf.vert.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/shader/msdf.vert.mjs
 var msdfVert = `// Mesh material default fragment\r
 attribute vec2 aVertexPosition;\r
 attribute vec2 aTextureCoord;\r
@@ -28884,7 +28884,7 @@ void main(void)\r
 
 //# sourceMappingURL=msdf.vert.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/BitmapText.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/BitmapText.mjs
 
 
 
@@ -29208,7 +29208,7 @@ let BitmapText = (/* unused pure expression or super */ null && (_BitmapText));
 
 //# sourceMappingURL=BitmapText.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/loadBitmapFont.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/loadBitmapFont.mjs
 
 
 
@@ -29248,7 +29248,7 @@ extensions.add(loadBitmapFont);
 
 //# sourceMappingURL=loadBitmapFont.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-bitmap/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-bitmap/lib/index.mjs
 
 
 
@@ -29261,7 +29261,7 @@ extensions.add(loadBitmapFont);
 
 //# sourceMappingURL=index.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-html/lib/HTMLTextStyle.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-html/lib/HTMLTextStyle.mjs
 
 
 const _HTMLTextStyle = class _HTMLTextStyle2 extends TextStyle {
@@ -29537,7 +29537,7 @@ let HTMLTextStyle = _HTMLTextStyle;
 
 //# sourceMappingURL=HTMLTextStyle.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-html/lib/HTMLText.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-html/lib/HTMLText.mjs
 
 
 
@@ -29747,7 +29747,7 @@ let HTMLText = (/* unused pure expression or super */ null && (_HTMLText));
 
 //# sourceMappingURL=HTMLText.mjs.map
 
-;// CONCATENATED MODULE: ./node_modules/@pixi/text-html/lib/index.mjs
+;// CONCATENATED MODULE: ./node_modules/pixi.js/node_modules/@pixi/text-html/lib/index.mjs
 
 
 
@@ -29954,9 +29954,10 @@ const app = new Application({
     width: window.innerWidth,
     height: window.innerHeight,
 });
-const backgroundMusic = new Audio('sounds/background2.wav');
+const backgroundMusic = new Audio('sounds/background1.wav');
 const collectSound = new Audio('sounds/collect.wav');
 const gameOverSound = new Audio('sounds/gameover.wav');
+backgroundMusic.loop = true;
 const audioContext = new AudioContext();
 const mediaElementSources = new Map();
 function playAudio(audio) {
@@ -30029,7 +30030,7 @@ let obstacleSpeed = maxSpeed / 2;
 // Score variable
 let score = 0;
 const scoreText = new Text(`Score: ${score}`, new TextStyle({
-    fontFamily: "Arial",
+    fontFamily: "diloworld",
     fontSize: 24,
     fill: "white",
 }));
@@ -30301,8 +30302,8 @@ window.addEventListener("resize", () => {
 const uiContainer = new Container();
 app.stage.addChild(uiContainer);
 const buttonStyle = new TextStyle({
-    fontFamily: "Arial",
-    fontSize: 24,
+    fontFamily: "diloworld",
+    fontSize: 40,
     fill: "white",
     stroke: "black",
     strokeThickness: 4,
@@ -30339,36 +30340,36 @@ const playButtonContainer = createButton("Play", app.screen.width - 140, 20, () 
 playButtonContainer.visible = false;
 uiContainer.addChild(playButtonContainer);
 const gameOverText = new Text("Game Over", new TextStyle({
-    fontFamily: "Arial",
-    fontSize: 48,
+    fontFamily: "diloworld",
+    fontSize: 100,
     fill: "red",
     stroke: "black",
     strokeThickness: 6,
 }));
-gameOverText.x = app.screen.width / 2 - gameOverText.width / 2;
-gameOverText.y = app.screen.height / 2 - gameOverText.height / 2;
+gameOverText.x = app.screen.width / 2 - gameOverText.width / 2 + 20;
+gameOverText.y = app.screen.height / 2 - gameOverText.height;
 gameOverText.visible = false;
 uiContainer.addChild(gameOverText);
 const playAgainContainer = new Container();
 playAgainContainer.visible = false;
 uiContainer.addChild(playAgainContainer);
 const playAgainText = new Text("Play Again?", new TextStyle({
-    fontFamily: "Arial",
-    fontSize: 36,
+    fontFamily: "diloworld",
+    fontSize: 50,
     fill: "white",
     stroke: "black",
     strokeThickness: 4,
 }));
 playAgainText.anchor.set(0.5);
-playAgainText.x = app.screen.width / 2;
-playAgainText.y = app.screen.height / 2 - 50;
+playAgainText.x = app.screen.width / 2 + 30;
+playAgainText.y = app.screen.height / 2 + 50;
 playAgainContainer.addChild(playAgainText);
-const yesButton = createButton("Yes", app.screen.width / 2 - 100, app.screen.height / 2 + 20, () => {
+const yesButton = createButton("Yes", app.screen.width / 2 - 100, app.screen.height / 2 + 90, () => {
     resetGame();
     updateGameState("play");
 });
 playAgainContainer.addChild(yesButton);
-const noButton = createButton("No", app.screen.width / 2 + 32, app.screen.height / 2 + 20, () => {
+const noButton = createButton("No", app.screen.width / 2 + 32, app.screen.height / 2 + 90, () => {
     playAgainContainer.visible = false;
 });
 playAgainContainer.addChild(noButton);
